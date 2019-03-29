@@ -1,0 +1,13 @@
+body {
+  background: url("../images/background.jpg") no-repeat;
+  background-size: cover;
+}
+
+header{
+  text-align: center;
+  height: 2em;
+}
+
+/*#Nit_Studioz {*/
+  /*height: 100%;*/
+/*}*/
