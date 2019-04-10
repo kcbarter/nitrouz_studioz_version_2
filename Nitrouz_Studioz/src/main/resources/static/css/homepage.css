@@ -5,9 +5,9 @@ body {
 
 header{
   text-align: center;
-  height: 2em;
-  width: 70vw;
+  width: 80vw;
   margin: 1em auto;
+  clear: both;
 }
 
 ul {
@@ -15,11 +15,28 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
+}
+
+.navbar{
   background-color: #333;
 }
 
+#login{
+  float: right;
+}
+
+#login a{
+  color: white;
+}
+
+#login a:hover{
+  color: deeppink;
+}
+
 nav{
-  align-items: center;
+  /*align-items: center;*/
+  text-align: center;
+  clear: both;
 }
 
 li {
@@ -34,11 +51,25 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+.navbar a:hover {
   background-color: purple;
   color: deeppink;
 }
 
-/*#Nit_Studioz {*/
-  /*height: 100%;*/
-/*}*/
+.active {
+  background-color: purple;
+  color: deeppink;
+}
+
+#Nit_Studioz {
+  height: 100px;
+  width: 550px;
+}
+
+#sec_back{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 50%;
+}
