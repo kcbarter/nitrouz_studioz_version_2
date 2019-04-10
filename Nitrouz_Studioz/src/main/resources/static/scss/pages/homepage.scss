@@ -1,5 +1,7 @@
+@import '../abstracts/colors';
+
 body {
-  background: url("../images/background.jpg") no-repeat;
+  background: url("../../images/background.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -9,7 +11,6 @@ header{
   margin: 1em auto;
   clear: both;
 }
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -18,7 +19,7 @@ ul {
 }
 
 .navbar{
-  background-color: #333;
+  background-color: $nav_background_color;
 }
 
 #login{
@@ -26,11 +27,11 @@ ul {
 }
 
 #login a{
-  color: white;
+  color: $login_color;
 }
 
 #login a:hover{
-  color: deeppink;
+  color: $login_hover;
 }
 
 nav{
@@ -45,20 +46,20 @@ li {
 
 li a {
   display: block;
-  color: aqua;
+  color: $li_color;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .navbar a:hover {
-  background-color: purple;
-  color: deeppink;
+  background-color: $hover_background;
+  color: $login_hover;
 }
 
 .active {
-  background-color: purple;
-  color: deeppink;
+  background-color: $hover_background;
+  color: $login_hover;
 }
 
 #Nit_Studioz {
