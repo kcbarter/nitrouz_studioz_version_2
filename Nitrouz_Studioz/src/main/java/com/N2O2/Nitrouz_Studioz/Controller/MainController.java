@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @RequestMapping("/")
-    public String home_page()
-    {
+    public String home_page() {
         return "index";
+    }
+
+    @RequestMapping("/about")
+    public String about_page(){
+        return "about";
     }
 }
