@@ -1,0 +1,87 @@
+@import '../abstracts/colors';
+
+body {
+  background: url("../../images/background.jpg") no-repeat;
+  background-size: cover;
+}
+
+header{
+  text-align: center;
+  width: 80vw;
+  margin: 1em auto;
+  clear: both;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: $login_color;
+  text-align: center;
+  clear: both;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav{
+  background-color: $nav_background_color;
+}
+
+.navbar{
+  background-color: $nav_background_color;
+}
+
+#login{
+  float: right;
+}
+
+#login a{
+  color: $login_color;
+}
+
+#login a:hover{
+  color: $login_hover;
+}
+
+nav{
+  /*align-items: center;*/
+  text-align: center;
+  clear: both;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: $li_color;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: $hover_background;
+  color: $login_hover;
+}
+
+.active {
+  background-color: $hover_background;
+  color: $login_hover;
+}
+
+#Nit_Studioz {
+  height: 100px;
+  width: 550px;
+}
+
+.footerImage{
+  height: 40px;
+  width: 40px;
+}

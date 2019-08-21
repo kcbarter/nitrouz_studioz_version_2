@@ -6,10 +6,26 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<header th:replace="fragments/navbar.html :: header"></header>
+<header>
+  <img src="images/Nitrouz_Studioz.png" id="Nit_Studioz">
+  <nav>
+    <ul id="nav">
+      <li class="navbar active"><a href="/">Home</a></li>
+      <li class="navbar"><a href="">News</a></li>
+      <li class="navbar"><a href="">Reviews</a></li>
+      <li class="navbar"><a href="">ESPORTS</a></li>
+      <li class="navbar"><a href="">Live Streams</a></li>
+      <li class="navbar"><a href="">Forums</a></li>
+      <li class="navbar"><a href="">Members</a></li>
+      <li class="navbar"><a href="/about">About</a></li>
+      <li id="login"><a href="">Login/Sign Up</a></li>
+    </ul>
+  </nav>
+</header>
+
 <img src="images/secundary_background.jpg" id="sec_back">
 
-<footer th:replace="fragments/navbar.html :: footer"></footer>
+<footer th:replace="fragments/footer.html :: footer"></footer>
 
 <script src="js/homepage.js"></script>
 </body>
