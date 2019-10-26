@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <title>About Page</title>
@@ -23,8 +23,25 @@
   </nav>
 </header>
 
+<div class="about_message">
+  <div id="contact_us">
+    <h1>Contact Us</h1>
+    <h3>Management:</h3>
+    <p>Anthony Gossett</p>
+    <p>nitrouzstudioz@hotmail.com</p>
+  </div>
+  <div id="send_message">
+    <form method="POST" action="/SendEmail">
+      <input id="name" name="name">
+      <input id="email" name="email">
+      <input id="subject" name="subject">
+      <button id="button" type="submit">Send email</button>
+    </form>
+  </div>
+</div>
+
 <footer th:replace="fragments/footer.html :: footer"></footer>
 
-<script src="js/homepage.js"></script>
+<script src="js/about.js"></script>
 </body>
 </html>

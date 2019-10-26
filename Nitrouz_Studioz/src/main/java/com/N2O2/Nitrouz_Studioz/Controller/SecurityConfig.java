@@ -9,9 +9,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .antMatcher("/**")
+//            .antMatcher("/**")
+//            .authorizeRequests()
+//            .antMatchers( "/")
+//            .permitAll();
+
             .authorizeRequests()
-            .antMatchers( "/")
-            .permitAll();
+            .antMatchers("/login").authenticated()
+            .antMatchers( "/**").permitAll()
+            .and()
+            .csrf().disable();
     }
 }

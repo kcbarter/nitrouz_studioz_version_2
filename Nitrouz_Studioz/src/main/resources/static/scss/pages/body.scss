@@ -2,12 +2,13 @@
 
 body {
   background: url("../../images/background.jpg") no-repeat;
+  margin-right: 10vw;
+  margin-left: 10vw;
   background-size: cover;
 }
 
 header{
   text-align: center;
-  width: 80vw;
   margin: 1em auto;
   clear: both;
 }
@@ -15,7 +16,7 @@ header{
 footer{
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 80vw;
   color: $login_color;
   text-align: center;
   clear: both;

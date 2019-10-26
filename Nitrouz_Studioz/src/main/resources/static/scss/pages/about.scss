@@ -1,0 +1,20 @@
+@import '../abstracts/colors';
+
+.about_message{
+  width: 80vw;
+  display: flex;
+}
+
+.about_message > div{
+  width: 20vw;
+}
+
+#contact_us{
+  flex-grow: 3;
+  color: $hover_background;
+}
+
+#send_message{
+  flex-grow: 8;
+  color: $login_color;
+}
