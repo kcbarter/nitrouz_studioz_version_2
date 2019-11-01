@@ -1,4 +1,4 @@
-package com.N2O2.Nitrouz_Studioz.Controller;
+package com.N2O2.Nitrouz_Studioz.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
