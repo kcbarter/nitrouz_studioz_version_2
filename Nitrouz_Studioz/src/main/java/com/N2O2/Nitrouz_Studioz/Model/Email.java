@@ -1,23 +1,29 @@
-package com.N2O2.Nitrouz_Studioz.Model;
+package com.N2O2.Nitrouz_Studioz.model;
 
-import java.util.Properties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
 
+@Service
 public class Email {
-    private String emailTo = "kevanbarter@gmail.com";
-    private static Email singleton;
+    private JavaMailSender sender;
+    private String emailTo = "kevanballer@gmail.com";
 
-    private Email(){
-
+    @Autowired
+    public Email(JavaMailSender sender){
+        this.sender = sender;
     }
 
-    public static Email getSingleton(){
-        if(singleton == null){
-            singleton = new Email();
-        }
-        return singleton;
-    }
+    public void sendMessage(String name, String email, String subject) throws MailException {
+        SimpleMailMessage mail = new SimpleMailMessage();
+        mail.setTo(emailTo);
+        mail.setFrom(email);
+        mail.setReplyTo(email);
+        mail.setSubject("From: " + name);
+        mail.setText(subject);
 
-    public void sendMessage(String name, String email, String message){
-        Properties properties = System.getProperties();
+        sender.send(mail);
     }
 }
