@@ -1,0 +1,115 @@
+#sec_back {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 50%;
+}
+
+body {
+  background: url("../../images/background.jpg") no-repeat;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  background-size: cover;
+}
+
+header {
+  text-align: center;
+  margin: 1em auto;
+  clear: both;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 80vw;
+  color: white;
+  text-align: center;
+  clear: both;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav {
+  background-color: #333;
+}
+
+.navbar {
+  background-color: #333;
+}
+
+#login {
+  float: right;
+}
+
+#login a {
+  color: white;
+}
+
+#login a:hover {
+  color: deeppink;
+}
+
+nav {
+  /*align-items: center;*/
+  text-align: center;
+  clear: both;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: aqua;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: purple;
+  color: deeppink;
+}
+
+.active {
+  background-color: purple;
+  color: deeppink;
+}
+
+#Nit_Studioz {
+  height: 100px;
+  width: 550px;
+}
+
+.footerImage {
+  height: 40px;
+  width: 40px;
+}
+
+.about_message {
+  width: 80vw;
+  display: flex;
+}
+
+.about_message > div {
+  width: 20vw;
+}
+
+#contact_us {
+  flex-grow: 3;
+  color: purple;
+}
+
+#send_message {
+  flex-grow: 8;
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */
