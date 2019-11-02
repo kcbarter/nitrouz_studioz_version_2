@@ -10,11 +10,25 @@
 }
 
 #contact_us{
-  flex-grow: 3;
-  color: $hover_background;
+  flex-grow: 4;
+  color: $login_hover;
 }
 
 #send_message{
-  flex-grow: 8;
+  flex-grow: 7;
+  margin-top: 2em;
   color: $login_color;
+}
+
+#name, #email, #subject {
+  width: 100%;
+  margin-bottom: .5em;
+}
+
+#button{
+  background-color: $send_button_color;
+  color: $white;
+  font-size: 1em;
+  padding: .5em;
+  float: right;
 }
