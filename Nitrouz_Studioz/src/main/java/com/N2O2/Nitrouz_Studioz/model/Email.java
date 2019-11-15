@@ -23,6 +23,7 @@ public class Email {
         mail.setReplyTo(email);
         mail.setSubject("From: " + name);
         mail.setText(subject);
+        
 
         sender.send(mail);
     }
