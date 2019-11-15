@@ -49,14 +49,17 @@ nav{
   color: $login_hover;
 }
 
+li+li {border-left: 1px solid $login_hover}
+
 nav{
-  /*align-items: center;*/
   text-align: center;
   clear: both;
 }
 
 li {
   float: left;
+  padding-left: .8em;
+  padding-right: .8em;
 }
 
 li a {
@@ -68,7 +71,6 @@ li a {
 }
 
 .navbar a:hover {
-  background-color: $hover_background;
   color: $login_hover;
 }
 

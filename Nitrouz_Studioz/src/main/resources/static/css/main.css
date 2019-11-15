@@ -36,11 +36,11 @@ ul {
 }
 
 nav {
-  background-color: #333;
+  background-color: #325658;
 }
 
 .navbar {
-  background-color: #333;
+  background-color: #325658;
 }
 
 #login {
@@ -55,14 +55,19 @@ nav {
   color: deeppink;
 }
 
+li + li {
+  border-left: 1px solid deeppink;
+}
+
 nav {
-  /*align-items: center;*/
   text-align: center;
   clear: both;
 }
 
 li {
   float: left;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
 }
 
 li a {
@@ -74,7 +79,6 @@ li a {
 }
 
 .navbar a:hover {
-  background-color: purple;
   color: deeppink;
 }
 
