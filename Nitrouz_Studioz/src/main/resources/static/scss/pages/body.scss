@@ -14,7 +14,6 @@ header{
 }
 
 footer{
-  position: fixed;
   bottom: 0;
   width: 80vw;
   color: $login_color;
@@ -29,16 +28,13 @@ ul {
   overflow: hidden;
 }
 
-nav{
-  background-color: $nav_background_color;
-}
-
 .navbar{
   background-color: $nav_background_color;
 }
 
 #login{
   float: right;
+  padding-left: 1em;
 }
 
 #login a{
@@ -49,7 +45,7 @@ nav{
   color: $login_hover;
 }
 
-li+li {border-left: 1px solid $login_hover}
+li+.navbar {border-left: 1px solid $login_hover}
 
 nav{
   text-align: center;
@@ -58,6 +54,7 @@ nav{
 
 li {
   float: left;
+  font-size: 1em;
   padding-left: .8em;
   padding-right: .8em;
 }
@@ -82,6 +79,11 @@ li a {
 #Nit_Studioz {
   height: 100px;
   width: 550px;
+}
+
+#sec_back{
+  height: 23em;
+  width: 50em;
 }
 
 .footerImage{
