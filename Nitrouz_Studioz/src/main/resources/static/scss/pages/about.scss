@@ -20,6 +20,12 @@
   color: $login_color;
 }
 
+#about{
+  background-color: $hover_background;
+  color: $li_color;
+  padding: 1em;
+}
+
 #name, #email, #subject {
   width: 100%;
   margin-bottom: .5em;

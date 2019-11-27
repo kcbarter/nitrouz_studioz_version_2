@@ -119,6 +119,12 @@ li a {
   color: white;
 }
 
+#about {
+  background-color: purple;
+  color: aqua;
+  padding: 1em;
+}
+
 #name, #email, #subject {
   width: 100%;
   margin-bottom: 0.5em;
