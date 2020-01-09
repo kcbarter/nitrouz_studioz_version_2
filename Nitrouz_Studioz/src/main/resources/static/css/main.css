@@ -138,4 +138,8 @@ li a {
   float: right;
 }
 
+#button:hover {
+  color: purple;
+}
+
 /*# sourceMappingURL=main.css.map */
