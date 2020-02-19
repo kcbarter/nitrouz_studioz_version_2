@@ -6,7 +6,7 @@
   width: 50%;
 }
 
-body {
+.pages {
   background: url("../../images/background.jpg") no-repeat;
   margin-right: 10vw;
   margin-left: 10vw;
@@ -140,6 +140,21 @@ li a {
 
 #button:hover {
   color: purple;
+}
+
+#SignInPage {
+  background-color: purple;
+}
+
+#signInForm {
+  align-content: center;
+  margin-left: 40vw;
+  margin-right: 40vw;
+}
+
+#exit {
+  float: right;
+  margin-right: 5vw;
 }
 
 /*# sourceMappingURL=main.css.map */
