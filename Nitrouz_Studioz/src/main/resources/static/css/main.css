@@ -142,11 +142,11 @@ li a {
   color: purple;
 }
 
-#SignInPage {
+#SignUpPage {
   background-color: purple;
 }
 
-#signInForm {
+#signup {
   align-content: center;
   margin-left: 40vw;
   margin-right: 40vw;
