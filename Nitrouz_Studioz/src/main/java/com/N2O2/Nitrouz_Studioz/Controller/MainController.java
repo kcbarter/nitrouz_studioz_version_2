@@ -17,8 +17,8 @@ public class MainController {
         return "about";
     }
 
-    @GetMapping("/signin")
-    public String sign_in(HttpSession session){
-        return "signin";
+    @GetMapping("/signup")
+    public String sign_up(HttpSession session){
+        return "signup";
     }
 }
