@@ -147,14 +147,38 @@ li a {
 }
 
 #signup {
-  align-content: center;
-  margin-left: 40vw;
-  margin-right: 40vw;
+  text-align: center;
+  margin-left: 30vw;
+  margin-right: 30vw;
 }
 
 #exit {
   float: right;
   margin-right: 5vw;
+}
+
+#signup h1 {
+  color: white;
+  font-size: 3em;
+}
+#signup h3 {
+  color: white;
+  font-size: 2em;
+}
+#signup a {
+  color: black;
+}
+#signup #or span {
+  color: black;
+  background: purple;
+  padding: 0 10px;
+}
+#signup #or {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid black;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

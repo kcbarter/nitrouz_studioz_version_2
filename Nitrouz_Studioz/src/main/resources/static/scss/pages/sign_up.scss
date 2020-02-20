@@ -1,0 +1,46 @@
+@import "../abstracts/colors";
+
+#SignUpPage{
+  background-color: $hover_background;
+}
+
+#signup{
+  text-align: center;
+  margin-left: 30vw;
+  margin-right: 30vw;
+}
+
+#exit{
+  float: right;
+  margin-right: 5vw;
+}
+
+#signup{
+  h1{
+    color: $white;
+    font-size: 3em;
+  }
+
+  h3{
+    color: $white;
+    font-size: 2em;
+  }
+
+  a{
+    color: $send_button_color;
+  }
+
+  #or span {
+    color: $send_button_color;
+    background: $hover_background;
+    padding:0 10px;
+  }
+
+  #or {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid $send_button_color;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+  }
+}
