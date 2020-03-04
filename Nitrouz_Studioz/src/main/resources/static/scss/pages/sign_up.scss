@@ -12,7 +12,12 @@
 
 #exit{
   float: right;
+  font-size: 3em;
   margin-right: 5vw;
+}
+
+a #exit {
+  color: $send_button_color;
 }
 
 #signup{
@@ -42,5 +47,12 @@
     border-bottom: 1px solid $send_button_color;
     line-height: 0.1em;
     margin: 10px 0 20px;
+  }
+
+  #signupButton {
+    background-color: $hover_background;
+    font-size: 2em;
+    border-color: $send_button_color;
+    width: 100%;
   }
 }
