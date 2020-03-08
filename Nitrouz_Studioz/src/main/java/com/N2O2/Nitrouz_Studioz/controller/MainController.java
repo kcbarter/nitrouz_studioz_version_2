@@ -17,4 +17,8 @@ public class MainController {
         return "about";
     }
 
+    @GetMapping("/signup")
+    public String sign_up(HttpSession session){
+        return "signup";
+    }
 }

@@ -6,7 +6,7 @@
   width: 50%;
 }
 
-body {
+.pages {
   background: url("../../images/background.jpg") no-repeat;
   margin-right: 10vw;
   margin-left: 10vw;
@@ -140,6 +140,62 @@ li a {
 
 #button:hover {
   color: purple;
+}
+
+#SignUpPage {
+  background-color: purple;
+}
+
+#signup {
+  text-align: center;
+  margin-left: 30vw;
+  margin-right: 30vw;
+}
+
+#exit {
+  float: right;
+  font-size: 3em;
+  margin-right: 5vw;
+}
+
+a #exit {
+  color: black;
+}
+
+#signup .signUpDivs {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#signup h1 {
+  color: white;
+  font-size: 3em;
+}
+#signup h3 {
+  color: white;
+  font-size: 2em;
+}
+#signup a {
+  color: black;
+}
+#signup #signupButton {
+  background-color: purple;
+  font-size: 2em;
+  border-color: black;
+  width: 100%;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+#signup #join label {
+  font-size: 1em;
+}
+#signup #footer {
+  padding-top: 0.5em;
+}
+#signup a #readMore {
+  color: black;
+}
+#signup #readMore:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */
