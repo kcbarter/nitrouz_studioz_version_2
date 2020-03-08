@@ -162,6 +162,10 @@ a #exit {
   color: black;
 }
 
+#signup .signUpDivs {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
 #signup h1 {
   color: white;
   font-size: 3em;
@@ -173,23 +177,25 @@ a #exit {
 #signup a {
   color: black;
 }
-#signup #or span {
-  color: black;
-  background: purple;
-  padding: 0 10px;
-}
-#signup #or {
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid black;
-  line-height: 0.1em;
-  margin: 10px 0 20px;
-}
 #signup #signupButton {
   background-color: purple;
   font-size: 2em;
   border-color: black;
   width: 100%;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+#signup #join label {
+  font-size: 1em;
+}
+#signup #footer {
+  padding-top: 0.5em;
+}
+#signup a #readMore {
+  color: black;
+}
+#signup #readMore:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

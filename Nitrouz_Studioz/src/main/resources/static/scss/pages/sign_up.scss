@@ -21,6 +21,10 @@ a #exit {
 }
 
 #signup{
+  .signUpDivs{
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
   h1{
     color: $white;
     font-size: 3em;
@@ -35,24 +39,28 @@ a #exit {
     color: $send_button_color;
   }
 
-  #or span {
-    color: $send_button_color;
-    background: $hover_background;
-    padding:0 10px;
-  }
-
-  #or {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid $send_button_color;
-    line-height: 0.1em;
-    margin: 10px 0 20px;
-  }
-
   #signupButton {
     background-color: $hover_background;
     font-size: 2em;
     border-color: $send_button_color;
     width: 100%;
+    padding-bottom: .2em;
+    padding-top: .2em;
+  }
+
+  #join label{
+    font-size: 1em;
+  }
+
+  #footer{
+    padding-top: .5em;
+  }
+
+  a #readMore{
+    color: $send_button_color;
+  }
+
+  #readMore:hover{
+    color: $white;
   }
 }
