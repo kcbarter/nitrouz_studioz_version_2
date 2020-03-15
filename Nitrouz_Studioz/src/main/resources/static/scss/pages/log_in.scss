@@ -29,4 +29,22 @@ a #exit{
   a:hover{
     color: $send_button_color;
   }
+  #email{
+    width: 100%;
+    font-size: 1.5em;
+  }
+  #password{
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #button{
+    width: 100%;
+    font-size: 2em;
+  }
+
+  #forgotPassword{
+    text-align: left;
+    font-size: 1.5em;
+  }
 }

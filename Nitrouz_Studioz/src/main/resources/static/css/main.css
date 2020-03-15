@@ -38,16 +38,16 @@ ul {
   background-color: #325658;
 }
 
-#login {
+#loginLink {
   float: right;
   padding-left: 1em;
 }
 
-#login a {
+#loginLink a {
   color: white;
 }
 
-#login a:hover {
+#loginLink a:hover {
   color: deeppink;
 }
 
@@ -261,6 +261,22 @@ a #exit {
 }
 #login a:hover {
   color: black;
+}
+#login #email {
+  width: 100%;
+  font-size: 1.5em;
+}
+#login #password {
+  width: 100%;
+  font-size: 1.5em;
+}
+#login #button {
+  width: 100%;
+  font-size: 2em;
+}
+#login #forgotPassword {
+  text-align: left;
+  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=main.css.map */
