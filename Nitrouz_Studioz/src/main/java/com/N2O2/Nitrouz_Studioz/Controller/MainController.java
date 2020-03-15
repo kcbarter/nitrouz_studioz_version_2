@@ -21,4 +21,9 @@ public class MainController {
     public String sign_up(HttpSession session){
         return "signup";
     }
+
+    @GetMapping("/login")
+    public String log_in(HttpSession session){
+        return "login";
+    }
 }

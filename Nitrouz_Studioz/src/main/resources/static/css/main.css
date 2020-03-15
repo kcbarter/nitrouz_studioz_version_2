@@ -142,17 +142,17 @@ li a {
   color: purple;
 }
 
-#SignUpPage {
+#SignUpPage, #LogInPage {
   background-color: purple;
 }
 
-#signup {
+#signup, #login {
   text-align: center;
   margin-left: 30vw;
   margin-right: 30vw;
 }
 
-#exit {
+#exit, a #exit {
   float: right;
   font-size: 3em;
   margin-right: 5vw;
@@ -162,22 +162,22 @@ a #exit {
   color: black;
 }
 
-#signup .signUpDivs {
+#signup .signUpDivs, #login .signUpDivs, #login .logInDivs {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-#signup h1 {
+#signup h1, #login h1 {
   color: white;
   font-size: 3em;
 }
-#signup h3 {
+#signup h3, #login h3 {
   color: white;
   font-size: 2em;
 }
-#signup a {
+#signup a, #login a {
   color: black;
 }
-#signup #signupButton {
+#signup #signupButton, #login #signupButton {
   background-color: purple;
   font-size: 2em;
   border-color: black;
@@ -185,17 +185,82 @@ a #exit {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
-#signup #join label {
+#signup #join label, #login #join label {
   font-size: 1em;
 }
-#signup #footer {
+#signup #footer, #login #footer {
   padding-top: 0.5em;
 }
-#signup a #readMore {
+#signup a #readMore, #login a #readMore {
   color: black;
 }
-#signup #readMore:hover {
+#signup #readMore:hover, #login #readMore:hover {
   color: white;
+  cursor: pointer;
+}
+
+#SignUpPage, #LogInPage {
+  background-color: purple;
+}
+
+#signup, #login {
+  text-align: center;
+  margin-left: 30vw;
+  margin-right: 30vw;
+}
+
+#exit, a #exit {
+  float: right;
+  font-size: 3em;
+  margin-right: 5vw;
+}
+
+a #exit {
+  color: black;
+}
+
+#signup .signUpDivs, #login .signUpDivs, #login .logInDivs {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#signup h1, #login h1 {
+  color: white;
+  font-size: 3em;
+}
+#signup h3, #login h3 {
+  color: white;
+  font-size: 2em;
+}
+#signup a, #login a {
+  color: black;
+}
+#signup #signupButton, #login #signupButton {
+  background-color: purple;
+  font-size: 2em;
+  border-color: black;
+  width: 100%;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+#signup #join label, #login #join label {
+  font-size: 1em;
+}
+#signup #footer, #login #footer {
+  padding-top: 0.5em;
+}
+#signup a #readMore, #login a #readMore {
+  color: black;
+}
+#signup #readMore:hover, #login #readMore:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#login a {
+  color: black;
+}
+#login a:hover {
+  color: black;
 }
 
 /*# sourceMappingURL=main.css.map */
