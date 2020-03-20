@@ -20,7 +20,7 @@ a #exit {
   color: $send_button_color;
 }
 
-#signup{
+#signup {
   .signUpDivs{
     padding-top: .5em;
     padding-bottom: .5em;
@@ -48,6 +48,11 @@ a #exit {
     padding-top: .2em;
   }
 
+  #signupButton:hover{
+    border-color: white;
+    color: white;
+  }
+
   #join label{
     font-size: 1em;
   }
@@ -58,6 +63,23 @@ a #exit {
 
   a #readMore{
     color: $send_button_color;
+  }
+
+  #email{
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #password{
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #button{
+    margin-top: .5em;
+    margin-bottom: .5em;
+    width: 100%;
+    font-size: 1.5em;
   }
 
   #readMore:hover{

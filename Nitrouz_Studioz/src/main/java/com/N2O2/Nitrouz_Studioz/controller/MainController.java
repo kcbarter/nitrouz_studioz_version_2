@@ -34,17 +34,17 @@ public class MainController {
 
     @GetMapping("/signup")
     public String sign_up(HttpSession session){
-        if(loggedIn){
-            String userName = "KevanBaller";
-            session.setAttribute("UserName", userName);
-            return "signup";
-        }
         return "signup";
     }
 
     @GetMapping("/login")
     public String log_in(HttpSession session){
         return "login";
+    }
+
+    @GetMapping("/signUpForm")
+    public String signUpForm(HttpSession session){
+        return "signUpForm";
     }
 
     @PostMapping("/Log_In")

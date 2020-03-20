@@ -185,6 +185,10 @@ a #exit {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
+#signup #signupButton:hover, #login #signupButton:hover {
+  border-color: white;
+  color: white;
+}
 #signup #join label, #login #join label {
   font-size: 1em;
 }
@@ -193,6 +197,20 @@ a #exit {
 }
 #signup a #readMore, #login a #readMore {
   color: black;
+}
+#signup #email, #login #email {
+  width: 100%;
+  font-size: 1.5em;
+}
+#signup #password, #login #password {
+  width: 100%;
+  font-size: 1.5em;
+}
+#signup #button, #login #button {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  font-size: 1.5em;
 }
 #signup #readMore:hover, #login #readMore:hover {
   color: white;
@@ -242,6 +260,10 @@ a #exit {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
+#signup #signupButton:hover, #login #signupButton:hover {
+  border-color: white;
+  color: white;
+}
 #signup #join label, #login #join label {
   font-size: 1em;
 }
@@ -250,6 +272,20 @@ a #exit {
 }
 #signup a #readMore, #login a #readMore {
   color: black;
+}
+#signup #email, #login #email {
+  width: 100%;
+  font-size: 1.5em;
+}
+#signup #password, #login #password {
+  width: 100%;
+  font-size: 1.5em;
+}
+#signup #button, #login #button {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  font-size: 1.5em;
 }
 #signup #readMore:hover, #login #readMore:hover {
   color: white;
@@ -272,7 +308,7 @@ a #exit {
 }
 #login #button {
   width: 100%;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 #login #forgotPassword {
   text-align: left;
