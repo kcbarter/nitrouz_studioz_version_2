@@ -18,6 +18,7 @@ HELP.md
 *.iml
 *.ipr
 /out/
+/src/main/resources/applications.properties
 
 ### NetBeans ###
 /nbproject/private/

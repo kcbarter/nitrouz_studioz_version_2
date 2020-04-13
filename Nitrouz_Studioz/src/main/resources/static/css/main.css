@@ -211,6 +211,7 @@ a #exit {
   margin-bottom: 0.5em;
   width: 100%;
   font-size: 1.5em;
+  cursor: pointer;
 }
 #signup #readMore:hover, #login #readMore:hover {
   color: white;
@@ -286,6 +287,7 @@ a #exit {
   margin-bottom: 0.5em;
   width: 100%;
   font-size: 1.5em;
+  cursor: pointer;
 }
 #signup #readMore:hover, #login #readMore:hover {
   color: white;
