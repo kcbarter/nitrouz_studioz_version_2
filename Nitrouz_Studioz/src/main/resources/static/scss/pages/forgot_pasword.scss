@@ -1,0 +1,42 @@
+@import "../abstracts/colors";
+@import "sign_up";
+
+#ForgotPasswordPage{
+  @extend #SignUpPage;
+}
+
+#exit{
+  @extend #exit;
+}
+
+a #exit{
+  @extend #exit;
+}
+
+#ForgotPassword{
+  @extend #signup;
+}
+
+#ForgotPassword{
+  .ForgotPasswordDivs{
+    @extend .signUpDivs;
+  }
+
+  a{
+    color: $send_button_color;
+  }
+
+  a:hover{
+    color: $send_button_color;
+  }
+
+  #email{
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #button{
+    width: 100%;
+    font-size: 1.5em;
+  }
+}

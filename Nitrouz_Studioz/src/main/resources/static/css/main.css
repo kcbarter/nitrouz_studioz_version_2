@@ -142,11 +142,11 @@ li a {
   color: purple;
 }
 
-#SignUpPage, #LogInPage {
+#SignUpPage, #ForgotPasswordPage, #LogInPage {
   background-color: purple;
 }
 
-#signup, #login {
+#signup, #ForgotPassword, #login {
   text-align: center;
   margin-left: 30vw;
   margin-right: 30vw;
@@ -162,22 +162,22 @@ a #exit {
   color: black;
 }
 
-#signup .signUpDivs, #login .signUpDivs, #login .logInDivs {
+#signup .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-#signup h1, #login h1 {
+#signup h1, #ForgotPassword h1, #login h1 {
   color: white;
   font-size: 3em;
 }
-#signup h3, #login h3 {
+#signup h3, #ForgotPassword h3, #login h3 {
   color: white;
   font-size: 2em;
 }
-#signup a, #login a {
+#signup a, #ForgotPassword a, #login a {
   color: black;
 }
-#signup #signupButton, #login #signupButton {
+#signup #signupButton, #ForgotPassword #signupButton, #login #signupButton {
   background-color: purple;
   font-size: 2em;
   border-color: black;
@@ -185,44 +185,44 @@ a #exit {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
-#signup #signupButton:hover, #login #signupButton:hover {
+#signup #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
   border-color: white;
   color: white;
 }
-#signup #join label, #login #join label {
+#signup #join label, #ForgotPassword #join label, #login #join label {
   font-size: 1em;
 }
-#signup #footer, #login #footer {
+#signup #footer, #ForgotPassword #footer, #login #footer {
   padding-top: 0.5em;
 }
-#signup a #readMore, #login a #readMore {
+#signup a #readMore, #ForgotPassword a #readMore, #login a #readMore {
   color: black;
 }
-#signup #email, #login #email {
+#signup #email, #ForgotPassword #email, #login #email {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #password, #login #password {
+#signup #password, #ForgotPassword #password, #login #password {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #button, #login #button {
+#signup #button, #ForgotPassword #button, #login #button {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   width: 100%;
   font-size: 1.5em;
   cursor: pointer;
 }
-#signup #readMore:hover, #login #readMore:hover {
+#signup #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
   color: white;
   cursor: pointer;
 }
 
-#SignUpPage, #LogInPage {
+#SignUpPage, #ForgotPasswordPage, #LogInPage {
   background-color: purple;
 }
 
-#signup, #login {
+#signup, #ForgotPassword, #login {
   text-align: center;
   margin-left: 30vw;
   margin-right: 30vw;
@@ -238,22 +238,22 @@ a #exit {
   color: black;
 }
 
-#signup .signUpDivs, #login .signUpDivs, #login .logInDivs {
+#signup .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-#signup h1, #login h1 {
+#signup h1, #ForgotPassword h1, #login h1 {
   color: white;
   font-size: 3em;
 }
-#signup h3, #login h3 {
+#signup h3, #ForgotPassword h3, #login h3 {
   color: white;
   font-size: 2em;
 }
-#signup a, #login a {
+#signup a, #ForgotPassword a, #login a {
   color: black;
 }
-#signup #signupButton, #login #signupButton {
+#signup #signupButton, #ForgotPassword #signupButton, #login #signupButton {
   background-color: purple;
   font-size: 2em;
   border-color: black;
@@ -261,35 +261,35 @@ a #exit {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
-#signup #signupButton:hover, #login #signupButton:hover {
+#signup #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
   border-color: white;
   color: white;
 }
-#signup #join label, #login #join label {
+#signup #join label, #ForgotPassword #join label, #login #join label {
   font-size: 1em;
 }
-#signup #footer, #login #footer {
+#signup #footer, #ForgotPassword #footer, #login #footer {
   padding-top: 0.5em;
 }
-#signup a #readMore, #login a #readMore {
+#signup a #readMore, #ForgotPassword a #readMore, #login a #readMore {
   color: black;
 }
-#signup #email, #login #email {
+#signup #email, #ForgotPassword #email, #login #email {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #password, #login #password {
+#signup #password, #ForgotPassword #password, #login #password {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #button, #login #button {
+#signup #button, #ForgotPassword #button, #login #button {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   width: 100%;
   font-size: 1.5em;
   cursor: pointer;
 }
-#signup #readMore:hover, #login #readMore:hover {
+#signup #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
   color: white;
   cursor: pointer;
 }
@@ -314,6 +314,97 @@ a #exit {
 }
 #login #forgotPassword {
   text-align: left;
+  font-size: 1.5em;
+}
+
+#SignUpPage, #ForgotPasswordPage, #LogInPage {
+  background-color: purple;
+}
+
+#signup, #ForgotPassword, #login {
+  text-align: center;
+  margin-left: 30vw;
+  margin-right: 30vw;
+}
+
+#exit, a #exit {
+  float: right;
+  font-size: 3em;
+  margin-right: 5vw;
+}
+
+a #exit {
+  color: black;
+}
+
+#signup .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#signup h1, #ForgotPassword h1, #login h1 {
+  color: white;
+  font-size: 3em;
+}
+#signup h3, #ForgotPassword h3, #login h3 {
+  color: white;
+  font-size: 2em;
+}
+#signup a, #ForgotPassword a, #login a {
+  color: black;
+}
+#signup #signupButton, #ForgotPassword #signupButton, #login #signupButton {
+  background-color: purple;
+  font-size: 2em;
+  border-color: black;
+  width: 100%;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+#signup #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
+  border-color: white;
+  color: white;
+}
+#signup #join label, #ForgotPassword #join label, #login #join label {
+  font-size: 1em;
+}
+#signup #footer, #ForgotPassword #footer, #login #footer {
+  padding-top: 0.5em;
+}
+#signup a #readMore, #ForgotPassword a #readMore, #login a #readMore {
+  color: black;
+}
+#signup #email, #ForgotPassword #email, #login #email {
+  width: 100%;
+  font-size: 1.5em;
+}
+#signup #password, #ForgotPassword #password, #login #password {
+  width: 100%;
+  font-size: 1.5em;
+}
+#signup #button, #ForgotPassword #button, #login #button {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+#signup #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
+  color: white;
+  cursor: pointer;
+}
+
+#ForgotPassword a {
+  color: black;
+}
+#ForgotPassword a:hover {
+  color: black;
+}
+#ForgotPassword #email {
+  width: 100%;
+  font-size: 1.5em;
+}
+#ForgotPassword #button {
+  width: 100%;
   font-size: 1.5em;
 }
 

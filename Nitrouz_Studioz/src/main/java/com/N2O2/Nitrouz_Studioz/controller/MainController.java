@@ -3,7 +3,7 @@ package com.N2O2.Nitrouz_Studioz.controller;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -11,7 +11,7 @@ public class MainController {
 
     private boolean loggedIn = false;
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String home_page(HttpSession session) {
 
         if(loggedIn){
@@ -22,7 +22,7 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/about")
+    @RequestMapping("/about")
     public String about_page(HttpSession session){
         if(loggedIn){
             String userName = "KevanBaller";
@@ -32,22 +32,22 @@ public class MainController {
         return "about";
     }
 
-    @GetMapping("/signup")
+    @RequestMapping("/signup")
     public String sign_up(HttpSession session){
         return "signup";
     }
 
-    @GetMapping("/login")
+    @RequestMapping("/login")
     public String log_in(HttpSession session){
         return "login";
     }
 
-    @GetMapping("/signUpForm")
+    @RequestMapping("/signUpForm")
     public String signUpForm(HttpSession session){
         return "signUpForm";
     }
 
-    @PostMapping("/Log_In")
+    @GetMapping("/Log_In")
     public String logInAttmpt(
         @RequestParam(name = "email") String email,
         @RequestParam(name = "password") String password){
@@ -60,5 +60,15 @@ public class MainController {
     public String logOut(){
         loggedIn = false;
         return "redirect:/index";
+    }
+
+    @RequestMapping("/ForgotPasswordPage")
+    public String forgotPasswordPage(){
+        return "forgotPassword";
+    }
+
+    @GetMapping("/Forgot_Password")
+    public String ForgotPasswordResponse(){
+        return "forgotPassword";
     }
 }
