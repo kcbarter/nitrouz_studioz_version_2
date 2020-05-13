@@ -13,13 +13,13 @@ import javax.validation.constraints.NotNull;
 public class Profile {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "profileID")
     private Long id;
-    @Column(name = "profilePic")
+    @Column(name = "profile_pic")
     private String profilePic;
     @NotNull
-    @Column(name = "profileName")
+    @Column(name = "profile_name")
     private String profileName;
     @Column(name = "name")
     private String name;

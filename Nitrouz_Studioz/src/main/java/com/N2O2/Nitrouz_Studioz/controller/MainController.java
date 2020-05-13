@@ -24,7 +24,7 @@ public class MainController {
 //        profileName = String.valueOf(profile.getProfileName());
 //        System.out.println("Profile Name is: " + profileName);
 
-        profile = new Profile(null, "KingJames", null, "LebronJames@gmail.com", null, null, "KingJames", true, true, true, true);
+        profile = new Profile("", "KingJames", "", "LebronJames@gmail.com", "", "", "KingJames", true, true, true, true);
         profileDoa.save(profile);
 
         if(loggedIn){
