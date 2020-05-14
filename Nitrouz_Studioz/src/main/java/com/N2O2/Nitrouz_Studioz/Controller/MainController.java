@@ -1,7 +1,7 @@
 package com.N2O2.Nitrouz_Studioz.controller;
 
-import com.N2O2.Nitrouz_Studioz.model.ProfileService.Profile;
-import com.N2O2.Nitrouz_Studioz.model.ProfileService.ProfileDoa;
+import com.N2O2.Nitrouz_Studioz.model.profileService.Profile;
+import com.N2O2.Nitrouz_Studioz.model.profileService.ProfileDoa;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
