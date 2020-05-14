@@ -39,9 +39,11 @@ public class Profile {
     private boolean follows;
     @Column(name = "general")
     private boolean general;
+    @Column(name = "enabled")
+    private boolean enabled;
 
     public Profile(String profilePic, String profileName, String name, String email, String about, String phone,
-        String password, boolean likes, boolean comments, boolean follows, boolean general){
+        String password, boolean likes, boolean comments, boolean follows, boolean general, boolean enabled){
         this.profilePic = profilePic;
         this.profileName = profileName;
         this.name = name;
@@ -53,6 +55,7 @@ public class Profile {
         this.comments = comments;
         this.follows = follows;
         this.general = general;
+        this.enabled = enabled;
     }
 
     public Profile() {
@@ -153,5 +156,13 @@ public class Profile {
 
     public void setGeneral(boolean general) {
         this.general = general;
+    }
+
+    public boolean isEnabled(){
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled){
+        this.enabled = enabled;
     }
 }

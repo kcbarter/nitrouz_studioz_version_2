@@ -19,12 +19,7 @@ public class MainController {
 
     @RequestMapping("/")
     public String home_page(HttpSession session) {
-//        String profileName;
-//        profile = profileDoa.findByEmail("kcbarter@msn.com");
-//        profileName = String.valueOf(profile.getProfileName());
-//        System.out.println("Profile Name is: " + profileName);
-
-        profile = new Profile("", "KingJames", "", "LebronJames@gmail.com", "", "", "KingJames", true, true, true, true);
+        profile = new Profile("", "KingJames", "", "LebronJames@gmail.com", "", "", "KingJames", true, true, true, true, true);
         profileDoa.save(profile);
 
         if(loggedIn){
