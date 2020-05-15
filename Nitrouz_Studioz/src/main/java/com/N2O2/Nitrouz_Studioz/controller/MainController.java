@@ -19,8 +19,6 @@ public class MainController {
 
     @RequestMapping("/")
     public String home_page(HttpSession session) {
-        profile = new Profile("", "KingJames", "", "LebronJames@gmail.com", "", "", "KingJames", true, true, true, true, true);
-        profileDoa.save(profile);
 
         if(loggedIn){
             String userName = "KevanBaller";
