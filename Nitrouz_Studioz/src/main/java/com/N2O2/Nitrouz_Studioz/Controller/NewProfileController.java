@@ -1,7 +1,5 @@
 package com.N2O2.Nitrouz_Studioz.controller;
 
-import com.N2O2.Nitrouz_Studioz.model.newProfileRegistration.VerificationTokenDoa;
-import com.N2O2.Nitrouz_Studioz.model.newProfileRegistration.VerificationTokenEntity;
 import com.N2O2.Nitrouz_Studioz.model.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +12,6 @@ public class NewProfileController {
 
     @Autowired
     ProfileService profileService;
-
-    private VerificationTokenEntity verificationTokenEntity;
-    @Autowired
-    private VerificationTokenDoa verificationTokenDoa;
 
     @PostMapping("/SignUp")
     public String newProfile(@RequestParam(name = "email") String email,
@@ -40,4 +34,5 @@ public class NewProfileController {
 
         return "";
     }
+
 }
