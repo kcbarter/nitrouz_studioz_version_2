@@ -1,29 +1,31 @@
 package com.N2O2.Nitrouz_Studioz.controller;
 
-import com.N2O2.Nitrouz_Studioz.model.profileService.Profile;
-import com.N2O2.Nitrouz_Studioz.model.profileService.ProfileDoa;
+import com.N2O2.Nitrouz_Studioz.model.newProfileRegistration.VerificationTokenDoa;
+import com.N2O2.Nitrouz_Studioz.model.newProfileRegistration.VerificationTokenEntity;
+import com.N2O2.Nitrouz_Studioz.model.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class NewProfileController {
 
-    private Profile profile;
     @Autowired
-    private ProfileDoa profileDoa;
+    ProfileService profileService;
+
+    private VerificationTokenEntity verificationTokenEntity;
+    @Autowired
+    private VerificationTokenDoa verificationTokenDoa;
 
     @PostMapping("/SignUp")
     public String newProfile(@RequestParam(name = "email") String email,
         @RequestParam(name = "password") String password,
         @RequestParam(name = "join") boolean join){
-        if(!emailExists(email)){
+        if(!profileService.emailExists(email)){
             String profileName = email.split("@")[0];
-            profile = new Profile(null, profileName, null, email, null, null, password,
-                join, join, join, join, false);
-            profileDoa.save(profile);
-            // TODO: 5/14/2020 add to VerificationToken Entity and and VerificationToke JPA repository 
+            profileService.createProfile(profileName, email, password, join);
 
             return "verfyEmail";
         }
@@ -33,7 +35,9 @@ public class NewProfileController {
         }
     }
 
-    private boolean emailExists(String email){
-        return profileDoa.findByEmail(email) != null;
+    @GetMapping("/registrationComplete")
+    public String registrationComplete(){
+
+        return "";
     }
 }

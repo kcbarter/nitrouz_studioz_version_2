@@ -1,6 +1,6 @@
 package com.N2O2.Nitrouz_Studioz.model.newProfileRegistration;
 
-import com.N2O2.Nitrouz_Studioz.model.profileService.Profile;
+import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Calendar;
@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "verification_token")
-public class VerificationToken {
+public class VerificationTokenEntity {
     private final static int EXPIRATION = 60 * 24;
 
     @Id
@@ -29,24 +29,24 @@ public class VerificationToken {
     private Date createdDate;
     @Column(name = "expire_date")
     private Date expiredDate;
-    @OneToOne(targetEntity = Profile.class, fetch = FetchType.EAGER)
+    @OneToOne(targetEntity = ProfileEntity.class, fetch = FetchType.EAGER)
     @JoinColumn(name = "profile_id", nullable = false)
-    private Profile profile;
+    private ProfileEntity profileEntity;
 
-    public VerificationToken(){
+    public VerificationTokenEntity(){
 
     }
 
-    public VerificationToken(String token){
+    public VerificationTokenEntity(String token){
         this.token = token;
         this.expiredDate = calculateExpiredDate(EXPIRATION);
     }
 
-    public VerificationToken(String token, Profile profile){
+    public VerificationTokenEntity(String token, ProfileEntity profileEntity){
         Calendar calendar = Calendar.getInstance();
 
         this.token = token;
-        this.profile = profile;
+        this.profileEntity = profileEntity;
         this.createdDate = new Date(calendar.getTime().getTime());
         this.expiredDate = calculateExpiredDate(EXPIRATION);
     }
@@ -83,10 +83,17 @@ public class VerificationToken {
         this.expiredDate = expiredDate;
     }
 
+    public ProfileEntity getProfileEntity() {
+        return profileEntity;
+    }
+
+    public void setProfileEntity(ProfileEntity profileEntity) {
+        this.profileEntity = profileEntity;
+    }
+
     private Date calculateExpiredDate(int expiredTimeMinutes){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Timestamp(calendar.getTime().getTime()));
-
         calendar.add(Calendar.MINUTE, expiredTimeMinutes);
         return new Date(calendar.getTime().getTime());
     }

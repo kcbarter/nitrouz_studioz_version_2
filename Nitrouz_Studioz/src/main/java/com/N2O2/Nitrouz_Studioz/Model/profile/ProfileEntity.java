@@ -1,4 +1,4 @@
-package com.N2O2.Nitrouz_Studioz.model.profileService;
+package com.N2O2.Nitrouz_Studioz.model.profile;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "profile")
-public class Profile {
+public class ProfileEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +42,7 @@ public class Profile {
     @Column(name = "enabled")
     private boolean enabled;
 
-    public Profile(String profilePic, String profileName, String name, String email, String about, String phone,
+    public ProfileEntity(String profilePic, String profileName, String name, String email, String about, String phone,
         String password, boolean likes, boolean comments, boolean follows, boolean general, boolean enabled){
         this.profilePic = profilePic;
         this.profileName = profileName;
@@ -58,7 +58,7 @@ public class Profile {
         this.enabled = enabled;
     }
 
-    public Profile() {
+    public ProfileEntity() {
 
     }
 

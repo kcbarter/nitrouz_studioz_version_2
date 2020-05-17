@@ -1,7 +1,7 @@
 package com.N2O2.Nitrouz_Studioz.controller;
 
-import com.N2O2.Nitrouz_Studioz.model.profileService.Profile;
-import com.N2O2.Nitrouz_Studioz.model.profileService.ProfileDoa;
+import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
+import com.N2O2.Nitrouz_Studioz.model.profile.ProfileDoa;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 
     private boolean loggedIn = false;
-    private Profile profile;
+    private ProfileEntity profileEntity;
     @Autowired
     private ProfileDoa profileDoa;
 
