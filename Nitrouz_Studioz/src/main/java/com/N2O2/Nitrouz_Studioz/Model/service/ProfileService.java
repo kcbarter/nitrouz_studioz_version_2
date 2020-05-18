@@ -30,6 +30,14 @@ public class ProfileService {
         confirmEmail(profileEntity);
     }
 
+    public void updateProfile(ProfileEntity profileEntity){
+        profileDoa.save(profileEntity);
+    }
+
+    public void newVerificationToken(ProfileEntity profileEntity){
+        confirmEmail(profileEntity);
+    }
+
     public boolean emailExists(String email){
         return profileDoa.findByEmail(email) != null;
     }
@@ -51,5 +59,9 @@ public class ProfileService {
         simpleMailMessage.setSubject(subject);
         simpleMailMessage.setText(message + "\r\n" + "http://localhost:8080" + confirmationURL);
         javaMailSender.send(simpleMailMessage);
+    }
+
+    public VerificationTokenEntity getVerificationToken(String token){
+        return verificationTokenDoa.findByToken(token);
     }
 }

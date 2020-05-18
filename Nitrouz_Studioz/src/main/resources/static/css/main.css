@@ -217,6 +217,9 @@ a #exit {
   color: white;
   cursor: pointer;
 }
+#signup .error, #ForgotPassword .error, #login .error {
+  color: white;
+}
 
 #SignUpPage, #ForgotPasswordPage, #LogInPage {
   background-color: purple;
@@ -292,6 +295,9 @@ a #exit {
 #signup #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
   color: white;
   cursor: pointer;
+}
+#signup .error, #ForgotPassword .error, #login .error {
+  color: white;
 }
 
 #login a {
@@ -391,6 +397,9 @@ a #exit {
 #signup #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
   color: white;
   cursor: pointer;
+}
+#signup .error, #ForgotPassword .error, #login .error {
+  color: white;
 }
 
 #ForgotPassword a {

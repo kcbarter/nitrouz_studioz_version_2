@@ -12,6 +12,9 @@
       <h1>Sign Up</h1>
       <h3 id="memberQuestion">Already a member? <a href="/login">Log In</a></h3>
     </div>
+    <aside th:if="${session.error}">
+      <h2><span th:text="${session.message}" class="error"></span></h2>
+    </aside>
     <div class="signUpDivs">
       <form method="POST" action="/SignUp">
         <input id="email" name="email" placeholder="Email" type="email">
@@ -20,7 +23,8 @@
       </form>
     </div>
     <div id="footer">
-      <input type="checkbox" id="join" name="join">
+      <input type="hidden" name="join" value="0">
+      <input type="checkbox" id="join" name="join" value="1">
       <label for="join">Join this sites community.</label><a role="link" onclick="readMore()" id="readMore"> Read More</a>
       <p id="info"></p>
     </div>
