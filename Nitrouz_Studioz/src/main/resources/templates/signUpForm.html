@@ -23,8 +23,7 @@
       </form>
     </div>
     <div id="footer">
-      <input type="hidden" name="join" value="0">
-      <input type="checkbox" id="join" name="join" value="1">
+      <input type="checkbox" id="join" name="join" th:checked="${session.join}">
       <label for="join">Join this sites community.</label><a role="link" onclick="readMore()" id="readMore"> Read More</a>
       <p id="info"></p>
     </div>

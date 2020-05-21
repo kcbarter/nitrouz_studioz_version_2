@@ -24,10 +24,11 @@ public class NewProfileController {
         @RequestParam(name = "password") String password,
         @RequestParam(name = "join") boolean join
         ){
-        // TODO: 5/17/2020 add landing page for success verfyEmail and solve join by sending checkbox value here
+        // TODO: 5/20/2020 figure out passing join value as boolean to controller 
+        String message;
         if(email.isEmpty() || password.isEmpty()){
             boolean error = true;
-            String message = "Field is empty. Please fill out the Form";
+            message = "Field is empty. Please fill out the Form";
             session.setAttribute("error", error);
             session.setAttribute("message", message);
             return "redirect:/signUpForm";
@@ -35,12 +36,13 @@ public class NewProfileController {
         if(!profileService.emailExists(email)){
             String profileName = email.split("@")[0];
             profileService.createProfile(profileName, email, password, join);
-
-            return "verfyEmail";
+            message = "Verification email sent. Please check your email to activate your account";
+            session.setAttribute("verify_email", message);
+            return "verifyEmail";
         }
         else{
             boolean error = true;
-            String message = "User already exists with that email associated it.";
+            message = "User already exists with that email associated it.";
             session.setAttribute("error", error);
             session.setAttribute("message", message);
             return "redirect:/signUpForm";
@@ -53,16 +55,21 @@ public class NewProfileController {
 
         ProfileEntity profileEntity = verificationTokenEntity.getProfileEntity();
         Calendar calendar = Calendar.getInstance();
+        String message;
 
         if(verificationTokenEntity.getExpiredDate().getTime() - calendar.getTime().getTime() <= 0){
-            session.setAttribute("error", "This token has expired. A new email has been emailed");
             profileService.newVerificationToken(profileEntity);
+            boolean verify_email = true;
+            message = "This token has expired. A new email has been emailed";
+            session.setAttribute("verify_email", message);
+            return "verifyEmail";
         }
 
         profileEntity.setEnabled(true);
         profileService.updateProfile(profileEntity);
-        // TODO: 5/17/2020 add landing page and getting email to send properly
-        return "";
+        message = "Your Email account is now active. Please log in!";
+        session.setAttribute("verify_email", message);
+        return "verifyEmail";
     }
 
 }

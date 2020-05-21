@@ -50,6 +50,8 @@ public class MainController {
 
     @RequestMapping("/signUpForm")
     public String signUpForm(HttpSession session){
+        boolean checked = false;
+        session.setAttribute("join", checked);
         return "signUpForm";
     }
 

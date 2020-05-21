@@ -1,0 +1,12 @@
+@import "../abstracts/colors";
+@import "sign_up";
+
+#verifyEmail{
+  @extend #SignUpPage;
+  font-size: 1em;
+}
+
+a #exit{
+  @extend #exit;
+}
+
