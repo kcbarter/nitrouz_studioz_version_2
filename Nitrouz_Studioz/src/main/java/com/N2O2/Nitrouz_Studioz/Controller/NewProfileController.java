@@ -22,9 +22,9 @@ public class NewProfileController {
     public String newProfile(HttpSession session,
         @RequestParam(name = "email") String email,
         @RequestParam(name = "password") String password,
-        @RequestParam(name = "join") boolean join
+        @RequestParam(name = "join", required = false, defaultValue = "false") boolean join
         ){
-        // TODO: 5/20/2020 figure out passing join value as boolean to controller 
+        System.out.println(join);
         String message;
         if(email.isEmpty() || password.isEmpty()){
             boolean error = true;

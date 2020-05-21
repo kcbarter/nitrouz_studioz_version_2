@@ -15,18 +15,18 @@
     <aside th:if="${session.error}">
       <h2><span th:text="${session.message}" class="error"></span></h2>
     </aside>
-    <div class="signUpDivs">
-      <form method="POST" action="/SignUp">
-        <input id="email" name="email" placeholder="Email" type="email">
-        <input id="password" name="password" placeholder="Password" type="password">
-        <button id="button" type="submit">Sign Up</button>
-      </form>
-    </div>
-    <div id="footer">
-      <input type="checkbox" id="join" name="join" th:checked="${session.join}">
-      <label for="join">Join this sites community.</label><a role="link" onclick="readMore()" id="readMore"> Read More</a>
-      <p id="info"></p>
-    </div>
+    <form method="POST" action="/SignUp">
+      <div class="signUpDivs">
+          <input id="email" name="email" placeholder="Email" type="email">
+          <input id="password" name="password" placeholder="Password" type="password">
+          <button id="button" type="submit">Sign Up</button>
+      </div>
+      <div id="footer">
+        <input type="checkbox" id="join" name="join" th:checked="${session.join}">
+        <label for="join">Join this sites community.</label><a role="link" onclick="readMore()" id="readMore"> Read More</a>
+        <p id="info"></p>
+      </div>
+    </form>
   </div>
 
   <script src="js/signup.js"></script>
