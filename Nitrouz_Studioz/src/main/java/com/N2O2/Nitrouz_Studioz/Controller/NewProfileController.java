@@ -26,7 +26,6 @@ public class NewProfileController {
         @RequestParam(name = "password") String password,
         @RequestParam(name = "join", required = false, defaultValue = "false") boolean join
         ){
-        System.out.println(join);
         String message;
         if(email.isEmpty() || password.isEmpty()){
             boolean error = true;
