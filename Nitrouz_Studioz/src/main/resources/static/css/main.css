@@ -142,11 +142,11 @@ li a {
   color: purple;
 }
 
-#SignUpPage, #ForgotPasswordPage, #LogInPage {
+#SignUpPage, #verifyEmail, #ForgotPasswordPage, #LogInPage {
   background-color: purple;
 }
 
-#signup, #ForgotPassword, #login {
+#signup, #verifyEmail #successLogin, #verifyEmail #response, #ForgotPassword, #login {
   text-align: center;
   margin-left: 30vw;
   margin-right: 30vw;
@@ -162,22 +162,22 @@ a #exit {
   color: black;
 }
 
-#signup .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
+#signup .signUpDivs, #verifyEmail #successLogin .signUpDivs, #verifyEmail #response .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-#signup h1, #ForgotPassword h1, #login h1 {
+#signup h1, #verifyEmail #successLogin h1, #verifyEmail #response h1, #ForgotPassword h1, #login h1 {
   color: white;
   font-size: 3em;
 }
-#signup h3, #ForgotPassword h3, #login h3 {
+#signup h3, #verifyEmail #successLogin h3, #verifyEmail #response h3, #ForgotPassword h3, #login h3 {
   color: white;
   font-size: 2em;
 }
-#signup a, #ForgotPassword a, #login a {
+#signup a, #verifyEmail #successLogin a, #verifyEmail #response a, #ForgotPassword a, #login a {
   color: black;
 }
-#signup #signupButton, #ForgotPassword #signupButton, #login #signupButton {
+#signup #signupButton, #verifyEmail #successLogin #signupButton, #verifyEmail #response #signupButton, #ForgotPassword #signupButton, #login #signupButton {
   background-color: purple;
   font-size: 2em;
   border-color: black;
@@ -185,47 +185,47 @@ a #exit {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
-#signup #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
+#signup #signupButton:hover, #verifyEmail #successLogin #signupButton:hover, #verifyEmail #response #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
   border-color: white;
   color: white;
 }
-#signup #join label, #ForgotPassword #join label, #login #join label {
+#signup #join label, #verifyEmail #successLogin #join label, #verifyEmail #response #join label, #ForgotPassword #join label, #login #join label {
   font-size: 1em;
 }
-#signup #footer, #ForgotPassword #footer, #login #footer {
+#signup #footer, #verifyEmail #successLogin #footer, #verifyEmail #response #footer, #ForgotPassword #footer, #login #footer {
   padding-top: 0.5em;
 }
-#signup a #readMore, #ForgotPassword a #readMore, #login a #readMore {
+#signup a #readMore, #verifyEmail #successLogin a #readMore, #verifyEmail #response a #readMore, #ForgotPassword a #readMore, #login a #readMore {
   color: black;
 }
-#signup #email, #ForgotPassword #email, #login #email {
+#signup #email, #verifyEmail #successLogin #email, #verifyEmail #response #email, #ForgotPassword #email, #login #email {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #password, #ForgotPassword #password, #login #password {
+#signup #password, #verifyEmail #successLogin #password, #verifyEmail #response #password, #ForgotPassword #password, #login #password {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #button, #ForgotPassword #button, #login #button {
+#signup #button, #verifyEmail #successLogin #button, #verifyEmail #response #button, #ForgotPassword #button, #login #button {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   width: 100%;
   font-size: 1.5em;
   cursor: pointer;
 }
-#signup #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
+#signup #readMore:hover, #verifyEmail #successLogin #readMore:hover, #verifyEmail #response #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
   color: white;
   cursor: pointer;
 }
-#signup .error, #ForgotPassword .error, #login .error {
+#signup .error, #verifyEmail #successLogin .error, #verifyEmail #response .error, #ForgotPassword .error, #login .error {
   color: white;
 }
 
-#SignUpPage, #ForgotPasswordPage, #LogInPage {
+#SignUpPage, #verifyEmail, #ForgotPasswordPage, #LogInPage {
   background-color: purple;
 }
 
-#signup, #ForgotPassword, #login {
+#signup, #verifyEmail #successLogin, #verifyEmail #response, #ForgotPassword, #login {
   text-align: center;
   margin-left: 30vw;
   margin-right: 30vw;
@@ -241,22 +241,22 @@ a #exit {
   color: black;
 }
 
-#signup .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
+#signup .signUpDivs, #verifyEmail #successLogin .signUpDivs, #verifyEmail #response .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-#signup h1, #ForgotPassword h1, #login h1 {
+#signup h1, #verifyEmail #successLogin h1, #verifyEmail #response h1, #ForgotPassword h1, #login h1 {
   color: white;
   font-size: 3em;
 }
-#signup h3, #ForgotPassword h3, #login h3 {
+#signup h3, #verifyEmail #successLogin h3, #verifyEmail #response h3, #ForgotPassword h3, #login h3 {
   color: white;
   font-size: 2em;
 }
-#signup a, #ForgotPassword a, #login a {
+#signup a, #verifyEmail #successLogin a, #verifyEmail #response a, #ForgotPassword a, #login a {
   color: black;
 }
-#signup #signupButton, #ForgotPassword #signupButton, #login #signupButton {
+#signup #signupButton, #verifyEmail #successLogin #signupButton, #verifyEmail #response #signupButton, #ForgotPassword #signupButton, #login #signupButton {
   background-color: purple;
   font-size: 2em;
   border-color: black;
@@ -264,39 +264,39 @@ a #exit {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
-#signup #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
+#signup #signupButton:hover, #verifyEmail #successLogin #signupButton:hover, #verifyEmail #response #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
   border-color: white;
   color: white;
 }
-#signup #join label, #ForgotPassword #join label, #login #join label {
+#signup #join label, #verifyEmail #successLogin #join label, #verifyEmail #response #join label, #ForgotPassword #join label, #login #join label {
   font-size: 1em;
 }
-#signup #footer, #ForgotPassword #footer, #login #footer {
+#signup #footer, #verifyEmail #successLogin #footer, #verifyEmail #response #footer, #ForgotPassword #footer, #login #footer {
   padding-top: 0.5em;
 }
-#signup a #readMore, #ForgotPassword a #readMore, #login a #readMore {
+#signup a #readMore, #verifyEmail #successLogin a #readMore, #verifyEmail #response a #readMore, #ForgotPassword a #readMore, #login a #readMore {
   color: black;
 }
-#signup #email, #ForgotPassword #email, #login #email {
+#signup #email, #verifyEmail #successLogin #email, #verifyEmail #response #email, #ForgotPassword #email, #login #email {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #password, #ForgotPassword #password, #login #password {
+#signup #password, #verifyEmail #successLogin #password, #verifyEmail #response #password, #ForgotPassword #password, #login #password {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #button, #ForgotPassword #button, #login #button {
+#signup #button, #verifyEmail #successLogin #button, #verifyEmail #response #button, #ForgotPassword #button, #login #button {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   width: 100%;
   font-size: 1.5em;
   cursor: pointer;
 }
-#signup #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
+#signup #readMore:hover, #verifyEmail #successLogin #readMore:hover, #verifyEmail #response #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
   color: white;
   cursor: pointer;
 }
-#signup .error, #ForgotPassword .error, #login .error {
+#signup .error, #verifyEmail #successLogin .error, #verifyEmail #response .error, #ForgotPassword .error, #login .error {
   color: white;
 }
 
@@ -323,11 +323,11 @@ a #exit {
   font-size: 1.5em;
 }
 
-#SignUpPage, #ForgotPasswordPage, #LogInPage {
+#SignUpPage, #verifyEmail, #ForgotPasswordPage, #LogInPage {
   background-color: purple;
 }
 
-#signup, #ForgotPassword, #login {
+#signup, #verifyEmail #successLogin, #verifyEmail #response, #ForgotPassword, #login {
   text-align: center;
   margin-left: 30vw;
   margin-right: 30vw;
@@ -343,22 +343,22 @@ a #exit {
   color: black;
 }
 
-#signup .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
+#signup .signUpDivs, #verifyEmail #successLogin .signUpDivs, #verifyEmail #response .signUpDivs, #ForgotPassword .signUpDivs, #ForgotPassword .ForgotPasswordDivs, #login .signUpDivs, #login .logInDivs {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-#signup h1, #ForgotPassword h1, #login h1 {
+#signup h1, #verifyEmail #successLogin h1, #verifyEmail #response h1, #ForgotPassword h1, #login h1 {
   color: white;
   font-size: 3em;
 }
-#signup h3, #ForgotPassword h3, #login h3 {
+#signup h3, #verifyEmail #successLogin h3, #verifyEmail #response h3, #ForgotPassword h3, #login h3 {
   color: white;
   font-size: 2em;
 }
-#signup a, #ForgotPassword a, #login a {
+#signup a, #verifyEmail #successLogin a, #verifyEmail #response a, #ForgotPassword a, #login a {
   color: black;
 }
-#signup #signupButton, #ForgotPassword #signupButton, #login #signupButton {
+#signup #signupButton, #verifyEmail #successLogin #signupButton, #verifyEmail #response #signupButton, #ForgotPassword #signupButton, #login #signupButton {
   background-color: purple;
   font-size: 2em;
   border-color: black;
@@ -366,39 +366,39 @@ a #exit {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
-#signup #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
+#signup #signupButton:hover, #verifyEmail #successLogin #signupButton:hover, #verifyEmail #response #signupButton:hover, #ForgotPassword #signupButton:hover, #login #signupButton:hover {
   border-color: white;
   color: white;
 }
-#signup #join label, #ForgotPassword #join label, #login #join label {
+#signup #join label, #verifyEmail #successLogin #join label, #verifyEmail #response #join label, #ForgotPassword #join label, #login #join label {
   font-size: 1em;
 }
-#signup #footer, #ForgotPassword #footer, #login #footer {
+#signup #footer, #verifyEmail #successLogin #footer, #verifyEmail #response #footer, #ForgotPassword #footer, #login #footer {
   padding-top: 0.5em;
 }
-#signup a #readMore, #ForgotPassword a #readMore, #login a #readMore {
+#signup a #readMore, #verifyEmail #successLogin a #readMore, #verifyEmail #response a #readMore, #ForgotPassword a #readMore, #login a #readMore {
   color: black;
 }
-#signup #email, #ForgotPassword #email, #login #email {
+#signup #email, #verifyEmail #successLogin #email, #verifyEmail #response #email, #ForgotPassword #email, #login #email {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #password, #ForgotPassword #password, #login #password {
+#signup #password, #verifyEmail #successLogin #password, #verifyEmail #response #password, #ForgotPassword #password, #login #password {
   width: 100%;
   font-size: 1.5em;
 }
-#signup #button, #ForgotPassword #button, #login #button {
+#signup #button, #verifyEmail #successLogin #button, #verifyEmail #response #button, #ForgotPassword #button, #login #button {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   width: 100%;
   font-size: 1.5em;
   cursor: pointer;
 }
-#signup #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
+#signup #readMore:hover, #verifyEmail #successLogin #readMore:hover, #verifyEmail #response #readMore:hover, #ForgotPassword #readMore:hover, #login #readMore:hover {
   color: white;
   cursor: pointer;
 }
-#signup .error, #ForgotPassword .error, #login .error {
+#signup .error, #verifyEmail #successLogin .error, #verifyEmail #response .error, #ForgotPassword .error, #login .error {
   color: white;
 }
 
@@ -415,6 +415,100 @@ a #exit {
 #ForgotPassword #button {
   width: 100%;
   font-size: 1.5em;
+}
+
+#SignUpPage, #verifyEmail, #LogInPage, #ForgotPasswordPage {
+  background-color: purple;
+}
+
+#signup, #verifyEmail #successLogin, #verifyEmail #response, #login, #ForgotPassword {
+  text-align: center;
+  margin-left: 30vw;
+  margin-right: 30vw;
+}
+
+#exit, a #exit {
+  float: right;
+  font-size: 3em;
+  margin-right: 5vw;
+}
+
+a #exit {
+  color: black;
+}
+
+#signup .signUpDivs, #verifyEmail #successLogin .signUpDivs, #verifyEmail #response .signUpDivs, #login .signUpDivs, #ForgotPassword .signUpDivs, #login .logInDivs, #ForgotPassword .ForgotPasswordDivs {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#signup h1, #verifyEmail #successLogin h1, #verifyEmail #response h1, #login h1, #ForgotPassword h1 {
+  color: white;
+  font-size: 3em;
+}
+#signup h3, #verifyEmail #successLogin h3, #verifyEmail #response h3, #login h3, #ForgotPassword h3 {
+  color: white;
+  font-size: 2em;
+}
+#signup a, #verifyEmail #successLogin a, #verifyEmail #response a, #login a, #ForgotPassword a {
+  color: black;
+}
+#signup #signupButton, #verifyEmail #successLogin #signupButton, #verifyEmail #response #signupButton, #login #signupButton, #ForgotPassword #signupButton {
+  background-color: purple;
+  font-size: 2em;
+  border-color: black;
+  width: 100%;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+#signup #signupButton:hover, #verifyEmail #successLogin #signupButton:hover, #verifyEmail #response #signupButton:hover, #login #signupButton:hover, #ForgotPassword #signupButton:hover {
+  border-color: white;
+  color: white;
+}
+#signup #join label, #verifyEmail #successLogin #join label, #verifyEmail #response #join label, #login #join label, #ForgotPassword #join label {
+  font-size: 1em;
+}
+#signup #footer, #verifyEmail #successLogin #footer, #verifyEmail #response #footer, #login #footer, #ForgotPassword #footer {
+  padding-top: 0.5em;
+}
+#signup a #readMore, #verifyEmail #successLogin a #readMore, #verifyEmail #response a #readMore, #login a #readMore, #ForgotPassword a #readMore {
+  color: black;
+}
+#signup #email, #verifyEmail #successLogin #email, #verifyEmail #response #email, #login #email, #ForgotPassword #email {
+  width: 100%;
+  font-size: 1.5em;
+}
+#signup #password, #verifyEmail #successLogin #password, #verifyEmail #response #password, #login #password, #ForgotPassword #password {
+  width: 100%;
+  font-size: 1.5em;
+}
+#signup #button, #verifyEmail #successLogin #button, #verifyEmail #response #button, #login #button, #ForgotPassword #button {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+#signup #readMore:hover, #verifyEmail #successLogin #readMore:hover, #verifyEmail #response #readMore:hover, #login #readMore:hover, #ForgotPassword #readMore:hover {
+  color: white;
+  cursor: pointer;
+}
+#signup .error, #verifyEmail #successLogin .error, #verifyEmail #response .error, #login .error, #ForgotPassword .error {
+  color: white;
+}
+
+#verifyEmail #response {
+  font-size: 1.5em;
+  color: white;
+}
+#verifyEmail #successLogin {
+  padding-top: 0.5em;
+  font-size: 2em;
+}
+#verifyEmail a {
+  color: black;
+}
+#verifyEmail a:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

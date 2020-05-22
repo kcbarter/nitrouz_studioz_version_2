@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/html">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Sign Up Form</title>
@@ -22,7 +22,7 @@
           <button id="button" type="submit">Sign Up</button>
       </div>
       <div id="footer">
-        <input type="checkbox" id="join" name="join" th:checked="${session.join}">
+        <input type="checkbox" id="join" name="join" th:checked="${join}">
         <label for="join">Join this sites community.</label><a role="link" onclick="readMore()" id="readMore"> Read More</a>
         <p id="info"></p>
       </div>

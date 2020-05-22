@@ -3,10 +3,31 @@
 
 #verifyEmail{
   @extend #SignUpPage;
-  font-size: 1em;
 }
 
 a #exit{
   @extend #exit;
+}
+
+#verifyEmail{
+  #response{
+    @extend #signup;
+    font-size: 1.5em;
+    color: $white;
+  }
+
+  #successLogin{
+    @extend #signup;
+    padding-top: .5em;
+    font-size: 2em;
+  }
+
+  a{
+    color: $send_button_color;
+  }
+
+  a:hover{
+    color: $white;
+  }
 }
 

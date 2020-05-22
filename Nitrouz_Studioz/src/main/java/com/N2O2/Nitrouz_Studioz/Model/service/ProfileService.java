@@ -50,7 +50,7 @@ public class ProfileService {
 
         String email = profileEntity.getEmail();
         String subject = "Please Confirm Your Email";
-        String confirmationURL = "/registrationComplete.html?token=" + token;
+        String confirmationURL = "/registrationComplete?token=" + token;
         String message = "Thanks for creating and joining th community of Nitrouz Studioz."
             + "/nThere is one last step to activate your account. Please click the link below to activate your account!";
 

@@ -1,10 +1,11 @@
 package com.N2O2.Nitrouz_Studioz.controller;
 
-import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
 import com.N2O2.Nitrouz_Studioz.model.profile.ProfileDoa;
+import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,9 +50,9 @@ public class MainController {
     }
 
     @RequestMapping("/signUpForm")
-    public String signUpForm(HttpSession session){
+    public String signUpForm(Model model){
         boolean checked = false;
-        session.setAttribute("join", checked);
+        model.addAttribute("join", checked);
         return "signUpForm";
     }
 

@@ -7,6 +7,7 @@ import java.util.Calendar;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,8 @@ public class NewProfileController {
     ProfileService profileService;
 
     @PostMapping("/SignUp")
-    public String newProfile(HttpSession session,
+    public String newProfile(Model model,
+        HttpSession session,
         @RequestParam(name = "email") String email,
         @RequestParam(name = "password") String password,
         @RequestParam(name = "join", required = false, defaultValue = "false") boolean join
@@ -37,7 +39,7 @@ public class NewProfileController {
             String profileName = email.split("@")[0];
             profileService.createProfile(profileName, email, password, join);
             message = "Verification email sent. Please check your email to activate your account";
-            session.setAttribute("verify_email", message);
+            model.addAttribute("verify_email", message);
             return "verifyEmail";
         }
         else{
@@ -50,7 +52,7 @@ public class NewProfileController {
     }
 
     @GetMapping("/registrationComplete")
-    public String registrationComplete(WebRequest webRequest, HttpSession session, @RequestParam(name = "token") String token){
+    public String registrationComplete(WebRequest webRequest, HttpSession session, Model model, @RequestParam(name = "token") String token){
         VerificationTokenEntity verificationTokenEntity = profileService.getVerificationToken(token);
 
         ProfileEntity profileEntity = verificationTokenEntity.getProfileEntity();
@@ -59,16 +61,16 @@ public class NewProfileController {
 
         if(verificationTokenEntity.getExpiredDate().getTime() - calendar.getTime().getTime() <= 0){
             profileService.newVerificationToken(profileEntity);
-            boolean verify_email = true;
             message = "This token has expired. A new email has been emailed";
-            session.setAttribute("verify_email", message);
+            model.addAttribute("verify_email", message);
             return "verifyEmail";
         }
 
         profileEntity.setEnabled(true);
         profileService.updateProfile(profileEntity);
+        session.setAttribute("success", true);
         message = "Your Email account is now active. Please log in!";
-        session.setAttribute("verify_email", message);
+        model.addAttribute("verify_email", message);
         return "verifyEmail";
     }
 
