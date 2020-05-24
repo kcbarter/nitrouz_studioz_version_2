@@ -8,7 +8,7 @@
 <body id="verifyEmail">
   <a href="/"><h1 id="exit">X</h1></a>
   <h1 id="response" th:text="${verify_email}"></h1>
-  <aside th:if="${session.success}">
+  <aside th:if="${success}">
     <h3 id="successLogin"><a href="/login">Log In</a></h3>
   </aside>
 </body>

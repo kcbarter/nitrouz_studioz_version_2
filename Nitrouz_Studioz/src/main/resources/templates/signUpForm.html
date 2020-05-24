@@ -12,8 +12,8 @@
       <h1>Sign Up</h1>
       <h3 id="memberQuestion">Already a member? <a href="/login">Log In</a></h3>
     </div>
-    <aside th:if="${session.error}">
-      <h2><span th:text="${session.message}" class="error"></span></h2>
+    <aside th:if="${error}">
+      <h2><span th:text="${message}" class="error"></span></h2>
     </aside>
     <form method="POST" action="/SignUp">
       <div class="signUpDivs">

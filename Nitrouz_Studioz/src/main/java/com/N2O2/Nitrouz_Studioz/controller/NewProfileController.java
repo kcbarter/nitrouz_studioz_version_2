@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class NewProfileController {
@@ -22,6 +23,7 @@ public class NewProfileController {
     @PostMapping("/SignUp")
     public String newProfile(Model model,
         HttpSession session,
+        RedirectAttributes redirectAttributes,
         @RequestParam(name = "email") String email,
         @RequestParam(name = "password") String password,
         @RequestParam(name = "join", required = false, defaultValue = "false") boolean join
@@ -30,9 +32,9 @@ public class NewProfileController {
         if(email.isEmpty() || password.isEmpty()){
             boolean error = true;
             message = "Field is empty. Please fill out the Form";
-            session.setAttribute("error", error);
-            session.setAttribute("message", message);
-            return "redirect:/signUpForm";
+            redirectAttributes.addFlashAttribute("error", error);
+            redirectAttributes.addFlashAttribute("message", message);
+            return "redirect:/signUpFormError";
         }
         if(!profileService.emailExists(email)){
             String profileName = email.split("@")[0];
@@ -44,9 +46,9 @@ public class NewProfileController {
         else{
             boolean error = true;
             message = "User already exists with that email associated it.";
-            session.setAttribute("error", error);
-            session.setAttribute("message", message);
-            return "redirect:/signUpForm";
+            redirectAttributes.addFlashAttribute("error", error);
+            redirectAttributes.addFlashAttribute("message", message);
+            return "redirect:/signUpFormError";
         }
     }
 
@@ -67,7 +69,7 @@ public class NewProfileController {
 
         profileEntity.setEnabled(true);
         profileService.updateProfile(profileEntity);
-        session.setAttribute("success", true);
+        model.addAttribute("success", true);
         message = "Your Email account is now active. Please log in!";
         model.addAttribute("verify_email", message);
         return "verifyEmail";
