@@ -15,10 +15,10 @@
     <aside th:if="${error}">
       <h2><span th:text="${message}" class="error"></span></h2>
     </aside>
-    <form method="POST" action="/SignUp">
+    <form method="POST" action="/SignUp" th:object="${profileEntity}">
       <div class="signUpDivs">
-          <input id="email" name="email" placeholder="Email" type="email">
-          <input id="password" name="password" placeholder="Password" type="password">
+          <input id="email" th:field="*{email}" placeholder="Email" type="email">
+          <input id="password" th:field="*{password}" placeholder="Password" type="password">
           <button id="button" type="submit">Sign Up</button>
       </div>
       <div id="footer">

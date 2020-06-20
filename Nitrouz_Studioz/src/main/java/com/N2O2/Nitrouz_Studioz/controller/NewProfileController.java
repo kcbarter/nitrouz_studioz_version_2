@@ -5,9 +5,11 @@ import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
 import com.N2O2.Nitrouz_Studioz.model.service.ProfileService;
 import java.util.Calendar;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,23 +24,23 @@ public class NewProfileController {
 
     @PostMapping("/SignUp")
     public String newProfile(Model model,
-        HttpSession session,
         RedirectAttributes redirectAttributes,
-        @RequestParam(name = "email") String email,
-        @RequestParam(name = "password") String password,
-        @RequestParam(name = "join", required = false, defaultValue = "false") boolean join
+        @RequestParam(name = "join", required = false, defaultValue = "false") boolean join,
+        @Valid ProfileEntity profileEntity,
+        BindingResult bindingResult
         ){
         String message;
-        if(email.isEmpty() || password.isEmpty()){
+        if(bindingResult.hasErrors()){
             boolean error = true;
-            message = "Field is empty. Please fill out the Form";
+            message = signUpFormErrorMessage(profileEntity.getEmail(), profileEntity.getPassword());
             redirectAttributes.addFlashAttribute("error", error);
             redirectAttributes.addFlashAttribute("message", message);
             return "redirect:/signUpFormError";
         }
-        if(!profileService.emailExists(email)){
-            String profileName = email.split("@")[0];
-            profileService.createProfile(profileName, email, password, join);
+        if(!profileService.emailExists(profileEntity.getEmail())){
+            String profileName = profileEntity.getEmail().split("@")[0];
+            profileEntity.setProfileName(profileName);
+            profileService.createProfile(join, profileEntity);
             message = "Verification email sent. Please check your email to activate your account";
             model.addAttribute("verify_email", message);
             return "verifyEmail";
@@ -75,4 +77,21 @@ public class NewProfileController {
         return "verifyEmail";
     }
 
+    private String signUpFormErrorMessage(String email, String password){
+        String result = "";
+        if(email.isEmpty() && password.isEmpty()){
+            result = "Please fill in Email and Password";
+        }
+        else if(email.isEmpty()){
+            result = "Please fill in email";
+        }
+        else if(password.isEmpty()){
+            result = "Please fill in password";
+        }
+        else if(password.length() < 8){
+            result = "Password length must be greater than 8";
+        }
+
+        return result;
+    }
 }

@@ -50,19 +50,24 @@ public class MainController {
         return "login";
     }
 
-    @RequestMapping("/signUpForm")
-    public String signUpForm(Model model){
+    @GetMapping("/signUpForm")
+    public String signUpForm(Model model, ProfileEntity profileEntity){
         boolean checked = false;
+        model.addAttribute("profileEntity", profileEntity);
         model.addAttribute("join", checked);
         return "signUpForm";
     }
 
     @RequestMapping("/signUpFormError")
-    public String signUpFormError(Model model, @ModelAttribute("error") boolean error, @ModelAttribute("message") String message){
+    public String signUpFormError(Model model,
+            @ModelAttribute("error") boolean error,
+            @ModelAttribute("message") String message,
+            ProfileEntity profileEntity){
         boolean checked = false;
         model.addAttribute("join", checked);
         model.addAttribute("error", error);
         model.addAttribute("message", message);
+        model.addAttribute("profileEntity", profileEntity);
         return "signUpForm";
     }
 

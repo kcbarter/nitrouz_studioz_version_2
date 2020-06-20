@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProfileService {
-    private ProfileEntity profileEntity;
     @Autowired
     private ProfileDoa profileDoa;
     private VerificationTokenEntity verificationTokenEntity;
@@ -22,9 +21,12 @@ public class ProfileService {
     @Autowired
     JavaMailSender javaMailSender;
 
-    public void createProfile(String profileName, String email, String password, boolean join){
-        profileEntity = new ProfileEntity(null, profileName, null, email, null, null, password,
-            join, join, join, join, false);
+    public void createProfile(boolean join, ProfileEntity profileEntity){
+        profileEntity.setLikes(join);
+        profileEntity.setComments(join);
+        profileEntity.setFollows(join);
+        profileEntity.setGeneral(join);
+        profileEntity.setEnabled(false);
         profileDoa.save(profileEntity);
 
         confirmEmail(profileEntity);

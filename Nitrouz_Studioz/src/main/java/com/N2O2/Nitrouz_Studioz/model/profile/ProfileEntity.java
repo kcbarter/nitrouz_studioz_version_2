@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "profile")
@@ -18,17 +19,20 @@ public class ProfileEntity {
     private Long id;
     @Column(name = "profile_pic")
     private String profilePic;
-    @NotNull
     @Column(name = "profile_name")
     private String profileName;
     @Column(name = "name")
     private String name;
+    @NotNull
+    @Size(min=3)
     @Column(name = "email")
     private String email;
     @Column(name = "about")
     private String about;
     @Column(name = "phone")
     private String phone;
+    @NotNull
+    @Size(min=8)
     @Column(name = "password")
     private String password;
     @Column(name = "likes")
