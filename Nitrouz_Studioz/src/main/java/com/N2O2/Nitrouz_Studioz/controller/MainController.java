@@ -71,6 +71,7 @@ public class MainController {
         return "signUpForm";
     }
 
+    //todo implement this controller method for login success
     @GetMapping("/Log_In")
     public String logInAttmpt(
         @RequestParam(name = "email") String email,

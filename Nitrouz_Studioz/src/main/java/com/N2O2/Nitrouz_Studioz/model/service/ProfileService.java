@@ -4,6 +4,9 @@ import com.N2O2.Nitrouz_Studioz.model.newProfileRegistration.VerificationTokenDo
 import com.N2O2.Nitrouz_Studioz.model.newProfileRegistration.VerificationTokenEntity;
 import com.N2O2.Nitrouz_Studioz.model.profile.ProfileDoa;
 import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
+import com.N2O2.Nitrouz_Studioz.model.role.RoleDoa;
+import com.N2O2.Nitrouz_Studioz.model.role.RoleEntity;
+import com.N2O2.Nitrouz_Studioz.model.role.Roles;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -17,6 +20,7 @@ public class ProfileService {
     private VerificationTokenEntity verificationTokenEntity;
     @Autowired
     private VerificationTokenDoa verificationTokenDoa;
+    private RoleDoa roleDoa;
 
     @Autowired
     JavaMailSender javaMailSender;
@@ -65,5 +69,13 @@ public class ProfileService {
 
     public VerificationTokenEntity getVerificationToken(String token){
         return verificationTokenDoa.findByToken(token);
+    }
+
+    public void createRole(ProfileEntity profileEntity){
+        //todo check to see if this works and prints out a string
+        RoleEntity roleEntity = new RoleEntity(profileEntity);
+        roleEntity.setRoles(Roles.USER);
+        roleDoa.save(roleEntity);
+        System.out.println(roleEntity.getRoleAsString(roleEntity.getRoles()));
     }
 }
