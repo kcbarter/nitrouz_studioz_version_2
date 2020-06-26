@@ -21,12 +21,6 @@ public class MainController {
 
     @RequestMapping("/")
     public String home_page(HttpSession session) {
-
-        if(loggedIn){
-            String userName = "KevanBaller";
-            session.setAttribute("UserName", userName);
-            return "index";
-        }
         return "index";
     }
 

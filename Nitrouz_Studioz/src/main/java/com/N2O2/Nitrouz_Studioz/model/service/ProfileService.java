@@ -20,6 +20,7 @@ public class ProfileService {
     private VerificationTokenEntity verificationTokenEntity;
     @Autowired
     private VerificationTokenDoa verificationTokenDoa;
+    @Autowired
     private RoleDoa roleDoa;
 
     @Autowired
