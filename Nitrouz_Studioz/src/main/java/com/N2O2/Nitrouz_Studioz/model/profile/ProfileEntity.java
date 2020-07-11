@@ -1,10 +1,15 @@
 package com.N2O2.Nitrouz_Studioz.model.profile;
 
+import com.N2O2.Nitrouz_Studioz.model.role.RoleEntity;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -45,6 +50,9 @@ public class ProfileEntity {
     private boolean general;
     @Column(name = "enabled")
     private boolean enabled;
+    @ManyToMany
+    @JoinTable(name = "profile_role", joinColumns = @JoinColumn(name = "profile_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<RoleEntity> roles;
 
     public ProfileEntity(String profilePic, String profileName, String name, String email, String about, String phone,
         String password, boolean likes, boolean comments, boolean follows, boolean general, boolean enabled){
@@ -168,5 +176,13 @@ public class ProfileEntity {
 
     public void setEnabled(boolean enabled){
         this.enabled = enabled;
+    }
+
+    public Set<RoleEntity> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<RoleEntity> roles) {
+        this.roles = roles;
     }
 }
