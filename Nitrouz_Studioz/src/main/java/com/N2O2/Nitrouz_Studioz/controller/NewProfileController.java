@@ -68,10 +68,7 @@ public class NewProfileController {
             model.addAttribute("verify_email", message);
             return "verifyEmail";
         }
-
-        profileEntity.setEnabled(true);
         profileService.updateProfile(profileEntity);
-        profileService.createRole(profileEntity);
         model.addAttribute("success", true);
         message = "Your Email account is now active. Please log in!";
         model.addAttribute("verify_email", message);

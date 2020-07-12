@@ -1,7 +1,9 @@
 package com.N2O2.Nitrouz_Studioz.model.role;
 
+import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+@Transactional
+public interface RoleDoa extends JpaRepository<RoleEntity, Integer> {
 
-public interface RoleDoa extends JpaRepository<RoleEntity, Long> {
-    public RoleEntity findByRole(String role);
+    public RoleEntity findByRoles(String role);
 }

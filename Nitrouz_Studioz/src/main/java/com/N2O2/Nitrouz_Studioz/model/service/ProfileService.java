@@ -40,6 +40,9 @@ public class ProfileService {
     }
 
     public void updateProfile(ProfileEntity profileEntity){
+        profileEntity.setEnabled(true);
+        RoleEntity profileRole = roleDoa.findByRoles(Roles.USER.name().toUpperCase());
+        profileEntity.setRoles(new HashSet<RoleEntity>(Arrays.asList(profileRole)));
         profileDoa.save(profileEntity);
     }
 
@@ -72,11 +75,5 @@ public class ProfileService {
 
     public VerificationTokenEntity getVerificationToken(String token){
         return verificationTokenDoa.findByToken(token);
-    }
-
-    public void createRole(ProfileEntity profileEntity){
-        RoleEntity profileRole = roleDoa.findByRole(Roles.USER.name().toUpperCase());
-        profileEntity.setRoles(new HashSet<RoleEntity>(Arrays.asList(profileRole)));
-        profileDoa.save(profileEntity);
     }
 }
