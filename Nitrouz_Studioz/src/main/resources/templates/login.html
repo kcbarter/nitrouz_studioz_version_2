@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/html">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Log In</title>
@@ -17,6 +17,9 @@
        <input id="email" name="email" placeholder="Email" type="email">
        <input id="password" name="password" placeholder="Password" type="password">
        <a href="/ForgotPasswordPage" id="forgotPassword"><p>Forgot Password?</p></a>
+       <div th:if="${param.error}">
+         <p>User Name or Password </p>
+       </div>
        <button id="button" type="submit">Log In</button>
      </form>
    </div>

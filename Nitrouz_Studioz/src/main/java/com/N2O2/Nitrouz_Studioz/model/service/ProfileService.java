@@ -54,6 +54,9 @@ public class ProfileService {
         return profileDoa.findByEmail(email) != null;
     }
 
+    public ProfileEntity findProfileByEmail(String email){
+        return  profileDoa.findByEmail(email);
+    }
 
     private void confirmEmail(ProfileEntity profileEntity){
         String token = UUID.randomUUID().toString();

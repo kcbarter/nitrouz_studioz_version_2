@@ -9,39 +9,32 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
 
+    private boolean loggedOut = true;
     private boolean loggedIn = false;
     private ProfileEntity profileEntity;
     @Autowired
     private ProfileDoa profileDoa;
 
     @RequestMapping("/")
-    public String home_page(HttpSession session) {
+    public String home_page(Model model) {
+        model.addAttribute("loggedOut", loggedOut);
+        model.addAttribute("loggedIn", loggedIn);
+        model.addAttribute("profileEntity", "Not logged In");
         return "index";
     }
 
     @RequestMapping("/about")
     public String about_page(HttpSession session){
-        if(loggedIn){
-            String userName = "KevanBaller";
-            session.setAttribute("UserName", userName);
-            return "about";
-        }
         return "about";
     }
 
     @RequestMapping("/signup")
     public String sign_up(HttpSession session){
         return "signup";
-    }
-
-    @RequestMapping("/login")
-    public String log_in(HttpSession session){
-        return "login";
     }
 
     @GetMapping("/signUpForm")
@@ -63,22 +56,6 @@ public class MainController {
         model.addAttribute("message", message);
         model.addAttribute("profileEntity", profileEntity);
         return "signUpForm";
-    }
-
-    //todo implement this controller method for login success
-    @GetMapping("/Log_In")
-    public String logInAttmpt(
-        @RequestParam(name = "email") String email,
-        @RequestParam(name = "password") String password){
-
-        loggedIn = true;
-        return "redirect:/index";
-    }
-
-    @GetMapping("/logOut")
-    public String logOut(){
-        loggedIn = false;
-        return "redirect:/index";
     }
 
     @RequestMapping("/ForgotPasswordPage")
