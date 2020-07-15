@@ -13,6 +13,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,9 +27,13 @@ public class ProfileService {
     private RoleDoa roleDoa;
 
     @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
     JavaMailSender javaMailSender;
 
     public void createProfile(boolean join, ProfileEntity profileEntity){
+        profileEntity.setPassword(bCryptPasswordEncoder.encode(profileEntity.getPassword()));
         profileEntity.setLikes(join);
         profileEntity.setComments(join);
         profileEntity.setFollows(join);

@@ -32,16 +32,16 @@ ul {
   background-color: $nav_background_color;
 }
 
-#loginLink{
+#loginLink, #logoutLink{
   float: right;
   padding-left: 1em;
 }
 
-#loginLink a{
+#loginLink a, #logoutLink a{
   color: $login_color;
 }
 
-#loginLink a:hover{
+#loginLink a:hover, #logoutLink a:hover{
   color: $login_hover;
 }
 

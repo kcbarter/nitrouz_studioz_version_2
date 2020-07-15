@@ -27,7 +27,7 @@ public class UserController {
         model.addAttribute("profileEntity", profileEntity);
         model.addAttribute("loggedIn", loggedIn);
         model.addAttribute("loggedOut", loggedOut);
-        return "/";
+        return "index";
     }
 }
 

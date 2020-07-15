@@ -38,16 +38,16 @@ ul {
   background-color: #325658;
 }
 
-#loginLink {
+#loginLink, #logoutLink {
   float: right;
   padding-left: 1em;
 }
 
-#loginLink a {
+#loginLink a, #logoutLink a {
   color: white;
 }
 
-#loginLink a:hover {
+#loginLink a:hover, #logoutLink a:hover {
   color: deeppink;
 }
 

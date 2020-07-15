@@ -8,7 +8,7 @@
 <body class="pages">
 <header>
   <img src="images/Nitrouz_Studioz.png" id="Nit_Studioz">
-  <nav th:each="profileDetails : ${profileEntity}">
+  <nav>
     <ul id="nav">
       <li class="navbar active"><a href="/">Home</a></li>
       <li class="navbar"><a href="">News</a></li>
@@ -20,10 +20,8 @@
       <li class="navbar"><a href="/about">About</a></li>
       <li th:if="${loggedOut}" id="loginLink"><a href="/signup">Login/Sign Up</a></li>
       <li th:if="${loggedIn}" id="logoutLink">
-        <!--
-        Insert ProfileEntity value
-      -->
-        <!--        <span th:text="${profileDetails.profileName}"></span>-->
+        <span th:text="${profileEntity.getProfileName()}"></span>
+        <a href="/logOut">Log Out</a>
       </li>
     </ul>
   </nav>
