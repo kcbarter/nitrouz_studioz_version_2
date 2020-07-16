@@ -38,6 +38,10 @@ ul {
   background-color: #325658;
 }
 
+#profile_name {
+  color: aqua;
+}
+
 #loginLink, #logoutLink {
   float: right;
   padding-left: 1em;

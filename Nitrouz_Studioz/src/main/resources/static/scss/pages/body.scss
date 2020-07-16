@@ -32,6 +32,10 @@ ul {
   background-color: $nav_background_color;
 }
 
+#profile_name{
+  color: $li_color
+}
+
 #loginLink, #logoutLink{
   float: right;
   padding-left: 1em;
