@@ -15,7 +15,7 @@ public class ProfileEntityTest {
         buildProfileEntity = new BuildProfileEntity();
         buildProfileEntity.buildProfile();
     }
-    
+
 
 
 
@@ -52,20 +52,18 @@ public class ProfileEntityTest {
             profileEntity.setGeneral(general);
             profileEntity.setEnabled(enabled);
             HashSet<RoleEntity> role = new HashSet<>();
-            role.add(buildRoles(role));
+            role.add(buildRoles(1, Roles.USER.name().toUpperCase()));
+            role.add(buildRoles(2, Roles.ADMIN.name().toUpperCase()));
             profileEntity.setRoles(role);
 
         }
 
-        private RoleEntity buildRoles(HashSet<RoleEntity> role) {
-            RoleEntity roleEntityOne = new RoleEntity();
-            RoleEntity roleEntityTwo = new RoleEntity();
-            roleEntityOne.setId(1);
-            roleEntityOne.setRoles(Roles.USER.name().toUpperCase());
-            roleEntityTwo.setId(2);
-            roleEntityTwo.setRoles(Roles.ADMIN.name().toUpperCase());
-            role.add(roleEntityOne);
-            role.add(roleEntityTwo);
+        private RoleEntity buildRoles(int id, String role) {
+            RoleEntity roleEntity = new RoleEntity();
+            roleEntity.setId(id);
+            roleEntity.setRoles(role);
+
+            return roleEntity;
         }
 
 
