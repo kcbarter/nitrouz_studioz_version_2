@@ -2,7 +2,6 @@ package com.N2O2.Nitrouz_Studioz.controller;
 
 import com.N2O2.Nitrouz_Studioz.model.profile.ProfileDoa;
 import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,12 +27,15 @@ public class MainController {
     }
 
     @RequestMapping("/about")
-    public String about_page(HttpSession session){
+    public String about_page(Model model){
+        model.addAttribute("loggedOut", loggedOut);
+        model.addAttribute("loggedIn", loggedIn);
+        model.addAttribute("profileEntity", "Not logged In");
         return "about";
     }
 
     @RequestMapping("/signup")
-    public String sign_up(HttpSession session){
+    public String sign_up(){
         return "signup";
     }
 
