@@ -29,5 +29,25 @@ public class UserController {
         model.addAttribute("loggedOut", loggedOut);
         return "index";
     }
+
+    @RequestMapping("/index")
+    public String loggedInIndex(Model model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        profileEntity = profileService.findProfileByEmail(auth.getName());
+        model.addAttribute("profileEntity", profileEntity);
+        model.addAttribute("loggedIn", loggedIn);
+        model.addAttribute("loggedOut", loggedOut);
+        return "index";
+    }
+
+    @RequestMapping("/about")
+    public String loggedInAbout(Model model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        profileEntity = profileService.findProfileByEmail(auth.getName());
+        model.addAttribute("profileEntity", profileEntity);
+        model.addAttribute("loggedIn", loggedIn);
+        model.addAttribute("loggedOut", loggedOut);
+        return "about";
+    }
 }
 

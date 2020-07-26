@@ -4,8 +4,10 @@ import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
 import com.N2O2.Nitrouz_Studioz.model.role.RoleEntity;
 import com.N2O2.Nitrouz_Studioz.model.role.Roles;
 import java.util.HashSet;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
 public class ProfileEntityTest {
     private BuildProfileEntity buildProfileEntity;
@@ -16,8 +18,20 @@ public class ProfileEntityTest {
         buildProfileEntity.buildProfile();
     }
 
+    @Test
+    public void whenIHaveAProfileEntityThenICanGetThePrimaryKey(){
+        Assertions.assertEquals(java.util.Optional.of(1L), java.util.Optional.of(buildProfileEntity.profileEntity.getId()));
+    }
+    @Test
+    public void whenISetProfileEntityToANewEntityThenICanGetTheNewPK(){
+        buildProfileEntity.profileEntity.setId(2L);
+        Assertions.assertEquals(java.util.Optional.of(2L), java.util.Optional.of(buildProfileEntity.profileEntity.getId()));
+    }
 
-
+    @Test
+    public void whenIHaveAProfileEntityThenICanGetTheProfilePic(){
+        Assertions.assertEquals("LeBron_img.jpg", buildProfileEntity.profileEntity.getProfilePic());
+    }
 
     @Nested
     public class BuildProfileEntity {
