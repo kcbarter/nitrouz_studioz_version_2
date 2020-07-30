@@ -132,6 +132,56 @@ public class ProfileEntityTest {
         Assertions.assertFalse(buildProfileEntity.profileEntity.isLikes());
     }
 
+    @Test
+    public void whenIHaveAProfileEntityICanGetTheBooleanValueOfComments(){
+        Assertions.assertTrue(buildProfileEntity.profileEntity.isComments());
+    }
+
+    @Test
+    public void wheneISetProfileEntityToANewEntityThenICanGetTheNewBooleanValueOfComments(){
+        boolean newComments = false;
+        buildProfileEntity.profileEntity.setComments(newComments);
+        Assertions.assertFalse(buildProfileEntity.profileEntity.isComments());
+    }
+
+    @Test
+    public void whenIHaveAProfileEntityThenICanGetTheBooleanValueOfFollows(){
+        Assertions.assertTrue(buildProfileEntity.profileEntity.isFollows());
+    }
+
+    @Test
+    public void whenISetProfileEntityToANewEntityThenICanGetTheNewBooleanValueOfFollows(){
+        boolean newFollows = false;
+        buildProfileEntity.profileEntity.setFollows(newFollows);
+        Assertions.assertFalse(buildProfileEntity.profileEntity.isFollows());
+    }
+
+    @Test
+    public void whenIHaveAProfileEntityThenICanGetTheBooleanValueOfGeneral(){
+        Assertions.assertTrue(buildProfileEntity.profileEntity.isGeneral());
+    }
+
+    @Test
+    public void whenISetProfileEntityToANewEntityThenICanGetTheNewValueOfGeneral(){
+        boolean newGeneral = false;
+        buildProfileEntity.profileEntity.setGeneral(newGeneral);
+        Assertions.assertFalse(buildProfileEntity.profileEntity.isGeneral());
+    }
+
+    @Test
+    public void whenIHaveAProfileEntityThenICanSeeIfTheProfileIsEnabled(){
+        Assertions.assertTrue(buildProfileEntity.profileEntity.isEnabled());
+    }
+
+    @Test
+    public void whenISetProfileEntityToANewEntityThenICanSeeIfTheNewProfileIsEnabled(){
+        boolean newEnabled = false;
+        buildProfileEntity.profileEntity.setEnabled(newEnabled);
+        Assertions.assertFalse(buildProfileEntity.profileEntity.isEnabled());
+    }
+
+    // TODO: 7/30/2020 Test RoleEntity
+
     @Nested
     public class BuildProfileEntity {
         private ProfileEntity profileEntity;
@@ -160,13 +210,12 @@ public class ProfileEntityTest {
             profileEntity.setPhone(phone);
             profileEntity.setPassword(password);
             profileEntity.setLikes(likes);
-            profileEntity.setLikes(comments);
+            profileEntity.setComments(comments);
             profileEntity.setFollows(follows);
             profileEntity.setGeneral(general);
             profileEntity.setEnabled(enabled);
             HashSet<RoleEntity> role = new HashSet<>();
             role.add(buildRoles(1, Roles.USER.name().toUpperCase()));
-            role.add(buildRoles(2, Roles.ADMIN.name().toUpperCase()));
             profileEntity.setRoles(role);
         }
 
