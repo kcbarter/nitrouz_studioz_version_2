@@ -1,7 +1,7 @@
 @import "../abstracts/colors";
 
 #SignUpPage{
-  background-color: $hover_background;
+  background-color: $purple;
 }
 
 #signup{
@@ -17,7 +17,7 @@
 }
 
 a #exit {
-  color: $send_button_color;
+  color: $black;
 }
 
 #signup {
@@ -36,13 +36,13 @@ a #exit {
   }
 
   a{
-    color: $send_button_color;
+    color: $black;
   }
 
   #signupButton {
-    background-color: $hover_background;
+    background-color: $purple;
     font-size: 2em;
-    border-color: $send_button_color;
+    border-color: $black;
     width: 100%;
     padding-bottom: .2em;
     padding-top: .2em;
@@ -62,7 +62,7 @@ a #exit {
   }
 
   a #readMore{
-    color: $send_button_color;
+    color: $black;
   }
 
   #email{

@@ -16,7 +16,7 @@ header{
 footer{
   bottom: 0;
   width: 80vw;
-  color: $login_color;
+  color: $white1;
   text-align: center;
   clear: both;
 }
@@ -29,11 +29,11 @@ ul {
 }
 
 .navbar{
-  background-color: $nav_background_color;
+  background-color: $darkgrey;
 }
 
 #profile_name{
-  color: $li_color
+  color: $aqua
 }
 
 #loginLink, #logoutLink{
@@ -42,14 +42,15 @@ ul {
 }
 
 #loginLink a, #logoutLink a{
-  color: $login_color;
+  color: $white1;
 }
 
 #loginLink a:hover, #logoutLink a:hover{
-  color: $login_hover;
+  color: $deeppink;
 }
 
-li+.navbar {border-left: 1px solid $login_hover}
+li+.navbar {border-left: 1px solid $deeppink
+}
 
 nav{
   text-align: center;
@@ -65,19 +66,19 @@ li {
 
 li a {
   display: block;
-  color: $li_color;
+  color: $aqua;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .navbar a:hover {
-  color: $login_hover;
+  color: $deeppink;
 }
 
 .active {
-  background-color: $hover_background;
-  color: $login_hover;
+  background-color: $purple;
+  color: $deeppink;
 }
 
 #Nit_Studioz {

@@ -11,18 +11,18 @@
 
 #contact_us{
   flex-grow: 4;
-  color: $login_hover;
+  color: $deeppink;
 }
 
 #send_message{
   flex-grow: 7;
   margin-top: 2em;
-  color: $login_color;
+  color: $white1;
 }
 
 #about{
-  background-color: $hover_background;
-  color: $li_color;
+  background-color: $purple;
+  color: $aqua;
   padding: 1em;
 }
 
@@ -32,7 +32,7 @@
 }
 
 #button{
-  background-color: $send_button_color;
+  background-color: $black;
   color: $white;
   font-size: 1em;
   padding: .5em;
@@ -40,5 +40,5 @@
 }
 
 #button:hover{
-  color: $hover_background;
+  color: $purple;
 }
