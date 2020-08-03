@@ -8,19 +8,30 @@
 
 .pages {
   background: url("../../images/background.jpg") no-repeat;
-  margin-right: 10vw;
-  margin-left: 10vw;
   background-size: cover;
+  margin: 0;
 }
 
 header {
   text-align: center;
-  margin: 1em auto;
+  background-color: black;
   clear: both;
+}
+
+nav {
+  background-color: #325658;
+}
+
+#heading {
+  display: inline-flex;
+  align-items: center;
+  clear: both;
+  background-color: black;
 }
 
 footer {
   bottom: 0;
+  margin-left: 10vw;
   width: 80vw;
   color: white;
   text-align: center;
@@ -29,7 +40,8 @@ footer {
 
 ul {
   list-style-type: none;
-  margin: 0;
+  margin-left: 15vw;
+  margin-right: 15vw;
   padding: 0;
   overflow: hidden;
 }
@@ -104,6 +116,8 @@ li a {
 }
 
 .about_message {
+  margin-left: 10vw;
+  margin-right: 10vw;
   width: 80vw;
   display: flex;
 }
