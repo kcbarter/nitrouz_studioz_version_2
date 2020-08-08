@@ -45,20 +45,24 @@ ul {
 }
 
 #profile_name{
-  color: $aqua
-}
-
-#loginLink, #logoutLink{
-  float: right;
-  padding-left: 1em;
+  color: $aqua;
 }
 
 #loginLink a, #logoutLink a{
   color: $white1;
+  float: right;
+  text-decoration: none;
+  padding-left: 1em;
+  font-size: 1em;
 }
 
 #loginLink a:hover, #logoutLink a:hover{
   color: $deeppink;
+}
+
+#login_logout{
+  text-align: right;
+  margin-right: 5vw;
 }
 
 li+.navbar {border-left: 1px solid $deeppink

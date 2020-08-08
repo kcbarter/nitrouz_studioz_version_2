@@ -54,17 +54,21 @@ ul {
   color: aqua;
 }
 
-#loginLink, #logoutLink {
-  float: right;
-  padding-left: 1em;
-}
-
 #loginLink a, #logoutLink a {
   color: white;
+  float: right;
+  text-decoration: none;
+  padding-left: 1em;
+  font-size: 1em;
 }
 
 #loginLink a:hover, #logoutLink a:hover {
   color: deeppink;
+}
+
+#login_logout {
+  text-align: right;
+  margin-right: 5vw;
 }
 
 li + .navbar {
