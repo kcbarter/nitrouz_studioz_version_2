@@ -28,6 +28,7 @@
       <li class="navbar"><a href="">Live Streams</a></li>
       <li class="navbar"><a href="">Forums</a></li>
       <li class="navbar"><a href="">Members</a></li>
+      <li class="navbar"><a th:href="${loggedOut} ? '/about' : '/LoggedInUser/about'">About</a></li>
     </ul>
   </nav>
 </header>
