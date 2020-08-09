@@ -50,6 +50,38 @@ ul {
   background-color: #325658;
 }
 
+.dropdown {
+  overflow: hidden;
+}
+
+.dropdown a {
+  font-size: 1em;
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  background-color: #325658;
+}
+
+.dropdown_content a {
+  float: none;
+  text-decoration: none;
+  display: block;
+  color: aqua;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  text-align: center;
+}
+
+.dropdown_content a:hover {
+  color: deeppink;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
+
 #profile_name {
   color: aqua;
 }
@@ -97,11 +129,16 @@ li a {
 
 .navbar a:hover {
   color: deeppink;
+  background-color: aqua;
 }
 
 .active {
   background-color: purple;
   color: deeppink;
+}
+
+.active a:hover {
+  background-color: purple !important;
 }
 
 #Nit_Studioz {

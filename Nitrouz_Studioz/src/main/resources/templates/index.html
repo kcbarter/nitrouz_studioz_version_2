@@ -22,12 +22,33 @@
   <nav>
     <ul id="nav">
       <li class="navbar active"><a th:href="${loggedOut} ? '/' : '/LoggedInUser/index'">Home</a></li>
-      <li class="navbar"><a href="">News</a></li>
-      <li class="navbar"><a href="">Reviews</a></li>
+      <li class="navbar">
+        <div class="dropdown">
+          <a href="">News</a>
+          <div class="dropdown_content">
+            <a href="">Reviews</a>
+          </div>
+        </div>
+      </li>
       <li class="navbar"><a href="">ESPORTS</a></li>
-      <li class="navbar"><a href="">Live Streams</a></li>
-      <li class="navbar"><a href="">Forums</a></li>
-      <li class="navbar"><a href="">Members</a></li>
+      <li class="navbar">
+        <div class="dropdown">
+          <a href="">Live Streams</a>
+          <div class="dropdown_content">
+            <a href="">Twitch</a>
+            <a href="">Youtube</a>
+          </div>
+        </div>
+      </li>
+      <li class="navbar"><a href="">Store</a></li>
+      <li class="navbar">
+        <div class="dropdown">
+          <a href="">Forums</a>
+          <div class="dropdown_content">
+            <a href="">Members</a>
+          </div>
+        </div>
+      </li>
       <li class="navbar"><a th:href="${loggedOut} ? '/about' : '/LoggedInUser/about'">About</a></li>
     </ul>
   </nav>
