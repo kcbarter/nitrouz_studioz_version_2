@@ -1,9 +1,28 @@
 #sec_back {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 300px;
-  width: 50%;
+  height: 18em;
+  width: 43em;
+  object-fit: fill;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: black;
+  grid-gap: 0.5em;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  padding: 1em 1em 1em 1em;
+}
+
+.gridItem1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gridItem2 {
+  background-color: purple;
 }
 
 .pages {
@@ -144,11 +163,6 @@ li a {
 #Nit_Studioz {
   height: 100px;
   width: 550px;
-}
-
-#sec_back {
-  height: 23em;
-  width: 50em;
 }
 
 .footerImage {
