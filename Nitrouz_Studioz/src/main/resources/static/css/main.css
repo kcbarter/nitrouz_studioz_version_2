@@ -1,27 +1,38 @@
 #sec_back {
   height: 18em;
-  width: 43em;
+  width: 33em;
   object-fit: fill;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 #grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: black;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 8, 10vw;
   grid-gap: 0.5em;
   margin-left: 10vw;
   margin-right: 10vw;
-  padding: 1em 1em 1em 1em;
+  background-color: black;
 }
 
 .gridItem1 {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 7;
   grid-row-start: 1;
   grid-row-end: 3;
 }
 
-.gridItem2 {
+.gridItem2, .gridItem3 {
+  grid-column-start: 7;
+  grid-column-end: 9;
+}
+
+.gridItem2, .gridItem3, .gridItem4, .gridItem5, .gridItem6 {
   background-color: purple;
 }
 
