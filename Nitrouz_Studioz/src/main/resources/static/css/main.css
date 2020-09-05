@@ -32,8 +32,40 @@
   grid-column-end: 9;
 }
 
-.gridItem2, .gridItem3, .gridItem4, .gridItem5, .gridItem6 {
+.gridItem4, .gridItem5, .gridItem6, gridItem7 {
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+.gridItem4 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.gridItem5 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.gridItem6 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+}
+
+.gridItem7 {
+  grid-column-start: 7;
+  grid-column-end: 9;
+}
+
+.gridItem2, .gridItem3, .gridItem4, .gridItem5, .gridItem6, .gridItem7 {
   background-color: purple;
+}
+
+.gridItem8 {
+  grid-row-start: 5;
+  grid-row-end: 8;
+  grid-column-start: 1;
+  grid-column-end: 9;
 }
 
 .pages {

@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
@@ -43,7 +44,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .passwordParameter("password")
             .and().logout()
             .logoutRequestMatcher(new AntPathRequestMatcher("/logOut"))
-            .logoutSuccessUrl("/");
+            .logoutSuccessUrl("/")
+            .and()
+            .headers()
+            .frameOptions()
+            .disable()
+            .addHeaderWriter(new StaticHeadersWriter("X-FRAME-OPTIONS",
+                    "ALLOW-FROM https://www.youtube.com/watch?v=HV2LVEPrKGs&feature=emb_title"));
     }
 
     @Override
