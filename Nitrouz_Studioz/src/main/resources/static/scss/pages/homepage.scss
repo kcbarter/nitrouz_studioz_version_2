@@ -25,42 +25,50 @@
 .gridItem1 {
   margin-top: 2em;
   margin-left: 2em;
-  margin-right: 2em;
   grid-column-start: 1;
-  grid-column-end: 9;
+  grid-column-end: 6;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 5;
 }
 
 .gridItem2, .gridItem3, .gridItem4, gridItem5{
-  grid-row-start: 3;
-  grid-row-end: 6;
+  margin-right: 2em;
 }
 
 .gridItem2 {
-  margin-left: 2em;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  margin-top: 2em;
+  margin-right: 2em;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 6;
+  grid-column-end: 9;
 }
 
 .gridItem3 {
-  grid-column-start: 3;
-  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  grid-column-start: 6;
+  grid-column-end: 9;
 }
 
 .gridItem4 {
-  grid-column-start: 5;
-  grid-column-end: 7;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 5;
+  grid-row-end: 7;
+  background-color: purple;
 }
 
 .gridItem5 {
   margin-right: 2em;
-  grid-column-start: 7;
+  grid-row-start: 5;
+  grid-row-end: 7;
+  grid-column-start: 6;
   grid-column-end: 9;
 }
 
 .gridItem6 {
-  grid-row-start: 6;
+  grid-row-start: 7;
   grid-row-end: 9;
   grid-column-start: 1;
   grid-column-end: 9;
