@@ -25,7 +25,7 @@ nav{
 
 footer{
   bottom: 0;
-  margin-left: 10vw;
+  margin-left: .5em;
   width: 80vw;
   color: $white1;
   text-align: center;
@@ -33,6 +33,7 @@ footer{
 }
 
 ul {
+  margin-bottom: 0;
   list-style-type: none;
   margin-left: 15vw;
   margin-right: 15vw;
@@ -138,11 +139,6 @@ li a {
   height: 100px;
   width: 550px;
 }
-
-//#sec_back{
-//  height: 23em;
-//  width: 50em;
-//}
 
 .footerImage{
   height: 40px;
