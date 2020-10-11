@@ -794,8 +794,57 @@ li a {
   background-color: black;
 }
 
-.members {
+h1, .members {
   color: white;
+  margin-top: 2em;
+}
+
+.members {
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-content: center;
+  grid-gap: 1em 1em;
+}
+
+.profile_pic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.grid_item {
+  max-width: 160px;
+  align-content: center;
+}
+
+.grid_item > p {
+  font-size: 1em;
+  font-weight: 50;
+}
+
+.like_follow {
+  display: flex;
+}
+
+.like_button {
+  height: 30px;
+  width: 30px;
+  padding-right: 1em;
+}
+
+.follow_button {
+  background-color: white;
+  border-color: darkgrey;
+  border-width: 2px;
+  color: black;
+  padding: 0.7em;
+  font-size: 0.9em;
+  font-weight: 50;
 }
 
 /*# sourceMappingURL=main.css.map */
