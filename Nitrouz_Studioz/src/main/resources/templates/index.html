@@ -45,7 +45,7 @@
         <div class="dropdown">
           <a href="">Forums</a>
           <div class="dropdown_content">
-            <a href="">Members</a>
+            <a th:href="${loggedOut} ? '/members' : '/LoggedInUser/members'">Members</a>
           </div>
         </div>
       </li>

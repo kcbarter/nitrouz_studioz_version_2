@@ -1,0 +1,14 @@
+@import "body";
+@import "../abstracts/colors";
+
+.members_info{
+  background-color: $black;
+}
+
+.members{
+  color: $white;
+}
+
+header{
+  @extend header;
+}

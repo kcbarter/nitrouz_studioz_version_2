@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Members</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="members_info">
+<header>
+    <div id="heading">
+        <img src="/images/Nitrouz_Studioz.png" id="Nit_Studioz">
+        <img class="footerImage" src="/images/twitter.png">
+        <img class="footerImage" src="/images/twitch.png">
+        <div id="login_logout">
+            <p th:if="${loggedOut}" id="loginLink"><a href="/signup">Login/Sign Up</a></p>
+            <div th:if="${loggedIn}" id="logoutLink">
+                <p id="profile_name" th:text="${profileEntity.getProfileName()}"></p>
+                <a href="/logOut">Log Out</a>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul id="nav">
+            <li class="navbar"><a th:href="${loggedOut} ? '/' : '/LoggedInUser/index'">Home</a></li>
+            <li class="navbar">
+                <div class="dropdown">
+                    <a href="">News</a>
+                    <div class="dropdown_content">
+                        <a href="">Reviews</a>
+                    </div>
+                </div>
+            </li>
+            <li class="navbar"><a href="">ESPORTS</a></li>
+            <li class="navbar">
+                <div class="dropdown">
+                    <a href="">Live Streams</a>
+                    <div class="dropdown_content">
+                        <a href="">Twitch</a>
+                        <a href="">Youtube</a>
+                    </div>
+                </div>
+            </li>
+            <li class="navbar"><a href="">Store</a></li>
+            <li class="navbar">
+                <div class="dropdown">
+                    <a href="">Forums</a>
+                    <div class="dropdown_content active">
+                        <a th:href="${loggedOut} ? '/members' : '/LoggedInUser/members'">Members</a>
+                    </div>
+                </div>
+            </li>
+            <li class="navbar"><a th:href="${loggedOut} ? '/about' : '/LoggedInUser/about'">About</a></li>
+        </ul>
+    </nav>
+    <div class="members">
+        <h1 th:if="${loggedOut}">Please log in to see Members</h1>
+    </div>
+</header>
+</body>
+</html>

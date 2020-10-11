@@ -34,6 +34,14 @@ public class MainController {
         return "about";
     }
 
+    @RequestMapping("/members")
+    public String members(Model model){
+        model.addAttribute("loggedOut", loggedOut);
+        model.addAttribute("loggedIn", loggedIn);
+        model.addAttribute("profileEntity", "Not logged In");
+        return "members";
+    }
+
     @RequestMapping("/signup")
     public String sign_up(){
         return "signup";

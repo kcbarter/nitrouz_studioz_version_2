@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers().authenticated()
             .antMatchers( "/", "/about", "/signup", "/signUpForm",
                 "/signUpFormError", "/login", "/logOut", "/ForgotPasswordPage", "/Forgot_Password",
-                "/SignUp", "/registrationComplete").permitAll()
+                "/SignUp", "/registrationComplete", "/members").permitAll()
             .antMatchers("/LoggedInUser/**").hasAnyAuthority("ADMIN", "USER", "MODERATOR")
             .anyRequest().authenticated().and().csrf().disable().formLogin()
             .loginPage("/login").failureUrl("/login?error=true")
