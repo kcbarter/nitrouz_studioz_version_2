@@ -38,7 +38,7 @@ public class MainController {
     public String members(Model model){
         model.addAttribute("loggedOut", loggedOut);
         model.addAttribute("loggedIn", loggedIn);
-        model.addAttribute("profileEntity", "Not logged In");
+        model.addAttribute("profileEntities", "Not logged In");
         return "members";
     }
 

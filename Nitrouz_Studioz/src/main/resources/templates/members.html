@@ -54,6 +54,9 @@
     </nav>
     <div class="members">
         <h1 th:if="${loggedOut}">Please log in to see Members</h1>
+        <div th:if="${loggedIn}" th:each="profile: ${profiles}">
+            <p th:text="${profile.getProfileName()}"></p>
+        </div>
     </div>
 </header>
 </body>

@@ -60,7 +60,12 @@ public class UserController {
     public String loggedInMembers(Model model){
         List<ProfileEntity> profiles = new ArrayList<>();
         profiles = memberService.getAllProfiles();
-        model.addAttribute("profileEntity", profiles);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        profileEntity = profileService.findProfileByEmail(auth.getName());
+        model.addAttribute("profileEntity", profileEntity);
+        model.addAttribute("profiles", profiles);
+        model.addAttribute("loggedIn", loggedIn);
+        model.addAttribute("loggedOut", loggedOut);
 
         return "members";
     }
