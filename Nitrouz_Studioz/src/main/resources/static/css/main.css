@@ -800,26 +800,25 @@ h1, .members {
 }
 
 .members {
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .grid_container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-content: center;
-  grid-gap: 1em 1em;
+  display: flex;
 }
 
 .profile_pic {
-  height: 150px;
-  width: 150px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
 }
 
 .grid_item {
-  max-width: 160px;
+  max-width: 110px;
   align-content: center;
+  margin-right: 3em;
+  margin-bottom: 3em;
 }
 
 .grid_item > p {
