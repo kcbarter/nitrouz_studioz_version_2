@@ -806,6 +806,7 @@ h1, .members {
 
 .grid_container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .profile_pic {
