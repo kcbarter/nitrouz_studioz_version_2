@@ -9,9 +9,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/LoggedInUser")
@@ -58,7 +58,7 @@ public class UserController {
 
     @RequestMapping("/members")
     public String loggedInMembers(Model model){
-        List<ProfileEntity> profiles = new ArrayList<>();
+        List<ProfileEntity> profiles;
         profiles = memberService.getAllProfiles();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         profileEntity = profileService.findProfileByEmail(auth.getName());
@@ -68,6 +68,14 @@ public class UserController {
         model.addAttribute("loggedOut", loggedOut);
 
         return "members";
+    }
+
+    @RequestMapping("/like")
+    public String likeProfile(Model model,
+                              @ModelAttribute(name = "liked_profile") String profileEmail){
+        System.out.println(profileEmail);
+
+        return "redirect:/LoggedInUser/members";
     }
 }
 
