@@ -52,21 +52,28 @@
             <li class="navbar"><a th:href="${loggedOut} ? '/about' : '/LoggedInUser/about'">About</a></li>
         </ul>
     </nav>
-    <h1 th:if="${loggedOut}">Please log in to see Members</h1>
-    <div th:if="${loggedIn}" class="grid_container members">
-        <div th:if="${loggedIn}" th:each="profile: ${profiles}" class="grid_item">
-            <img th:src="${(profile.getProfilePic() != null) ? profile.getProfilePic() : '/images/empty_profile_pic.png'}" class="profile_pic"/>
-            <p th:text="${profile.getProfileName()}"></p>
-            <div class="like_follow">
-                <form method="POST" action="/LoggedInUser/like">
-                    <input type="image" src="/images/thumbs_up.png" class="like_button" name="liked_profile" th:value="${profile.getEmail()}"/>
-                </form>
-                <a>
-                    <button class="follow_button">Follow</button>
-                </a>
-            </div>
+</header>
+<h1 th:if="${loggedOut}">Please log in to see Members</h1>
+<div th:if="${loggedIn}" class="grid_container members">
+    <div th:if="${loggedIn}" th:each="profile: ${profiles}" class="grid_item">
+        <img th:src="${(profile.getProfilePic() != null) ? profile.getProfilePic() : '/images/empty_profile_pic.png'}" class="profile_pic"/>
+        <p th:text="${profile.getProfileName()}"></p>
+        <div class="like_follow">
+            <form method="POST" action="/LoggedInUser/like">
+                <input type="image" src="/images/thumbs_up.png" class="like_button" name="liked_profile" th:value="${profile.getEmail()}"/>
+            </form>
+            <a>
+                <button class="follow_button">Follow</button>
+            </a>
         </div>
     </div>
-</header>
+</div>
+
+<script th:inline="javascript">
+    if([[${loggedIn}]]){
+        var username = [[${profileEntity.getProfileName()}]];
+        console.log(username);
+    }
+</script>
 </body>
 </html>
