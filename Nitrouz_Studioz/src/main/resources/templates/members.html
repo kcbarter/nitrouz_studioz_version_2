@@ -59,20 +59,21 @@
         <img th:src="${(profile.getProfilePic() != null) ? profile.getProfilePic() : '/images/empty_profile_pic.png'}" class="profile_pic"/>
         <p th:text="${profile.getProfileName()}"></p>
         <div class="like_follow">
-            <form method="POST" action="/LoggedInUser/like">
-                <input type="image" src="/images/thumbs_up.png" class="like_button" name="liked_profile" th:value="${profile.getEmail()}"/>
-            </form>
-            <a>
-                <button class="follow_button">Follow</button>
-            </a>
+            <input onclick="getEmail()" id="like_profile" type="image" src="/images/thumbs_up.png"
+                   class="like_button" name="liked_profile" th:value="${profile.getEmail()}" alt="Like Profile"/>
+            <button class="follow_button">Follow</button>
         </div>
     </div>
 </div>
 
 <script th:inline="javascript">
     if([[${loggedIn}]]){
-        var username = [[${profileEntity.getProfileName()}]];
-        console.log(username);
+        function getEmail(){
+            var username = [[${profileEntity.getProfileName()}]];
+            var email = document.getElementById("like_profile").value;
+            console.log(username);
+            console.log(email);
+        }
     }
 </script>
 </body>
