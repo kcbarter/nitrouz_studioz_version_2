@@ -9,7 +9,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -71,11 +70,23 @@ public class UserController {
     }
 
     @RequestMapping("/like")
-    public String likeProfile(Model model,
-                              @ModelAttribute(name = "liked_profile") String profileEmail){
-        System.out.println(profileEmail);
+    public void likeProfile(){
 
-        return "redirect:/LoggedInUser/members";
+    }
+
+    @RequestMapping("/follow")
+    public void followProfile(){
+
+    }
+
+    @RequestMapping("/unlike")
+    public void unlikeProfile(){
+
+    }
+
+    @RequestMapping("/unfollow")
+    public void unfollowProfile(){
+
     }
 }
 

@@ -56,21 +56,26 @@
 <h1 th:if="${loggedOut}">Please log in to see Members</h1>
 <div th:if="${loggedIn}" class="grid_container members">
     <div th:if="${loggedIn}" th:each="profile: ${profiles}" class="grid_item">
-        <img th:src="${(profile.getProfilePic() != null) ? profile.getProfilePic() : '/images/empty_profile_pic.png'}" class="profile_pic"/>
-        <p th:text="${profile.getProfileName()}"></p>
+        <img th:src="${(profile.profilePic != null) ? profile.profilePic : '/images/empty_profile_pic.png'}" class="profile_pic"/>
+        <p th:text="${profile.profileName}"></p>
         <div class="like_follow">
-            <input onclick="getEmail()" id="like_profile" type="image" src="/images/thumbs_up.png"
-                   class="like_button" name="liked_profile" th:value="${profile.getEmail()}" alt="Like Profile"/>
-            <button class="follow_button">Follow</button>
+            <input th:attr="onclick=|likeProfile('${profile.email}')|" id="like_profile" type="image" src="/images/thumbs_up.png"
+                   class="like_button" name="liked_profile" alt="Like Profile"/>
+            <button th:attr="onclick=|followProfile('${profile.email}')|" class="follow_button">Follow</button>
         </div>
     </div>
 </div>
 
 <script th:inline="javascript">
     if([[${loggedIn}]]){
-        function getEmail(){
+        function likeProfile(email){
             var username = [[${profileEntity.getProfileName()}]];
-            var email = document.getElementById("like_profile").value;
+            console.log(username);
+            console.log(email);
+        }
+
+        function followProfile(email){
+            var username = [[${profileEntity.getProfileName()}]];
             console.log(username);
             console.log(email);
         }
