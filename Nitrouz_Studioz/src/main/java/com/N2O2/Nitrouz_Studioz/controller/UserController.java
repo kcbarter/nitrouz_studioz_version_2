@@ -68,25 +68,5 @@ public class UserController {
 
         return "members";
     }
-
-    @RequestMapping("/like")
-    public void likeProfile(){
-
-    }
-
-    @RequestMapping("/follow")
-    public void followProfile(){
-
-    }
-
-    @RequestMapping("/unlike")
-    public void unlikeProfile(){
-
-    }
-
-    @RequestMapping("/unfollow")
-    public void unfollowProfile(){
-
-    }
 }
 
