@@ -58,7 +58,7 @@
     <div th:if="${loggedIn}" th:each="profile: ${profiles}" class="grid_item">
         <img th:src="${(profile.profilePic != null) ? profile.profilePic : '/images/empty_profile_pic.png'}" class="profile_pic"/>
         <p th:text="${profile.profileName}"></p>
-        <div class="like_follow">
+        <div th:if="${profileEntity.getProfileName()} != ${profile.profileName}" class="like_follow">
             <input th:attr="onclick=|likeProfile('${profile.email}')|" id="like_profile" type="image" src="/images/thumbs_up.png"
                    class="like_button" name="liked_profile" alt="Like Profile"/>
             <button th:attr="onclick=|followProfile('${profile.email}')|" class="follow_button">Follow</button>

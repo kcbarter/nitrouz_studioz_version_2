@@ -29,6 +29,12 @@ public class MemberService {
         return profiles;
     }
 
+    public List <LikedProfilesEntity> getProfilesLikedByUser(ProfileEntity profile){
+        List<LikedProfilesEntity> likedProfiles;
+        likedProfiles = likedProfileDoa.getByLikerId(profile);
+        return likedProfiles;
+    }
+
     public void likeProfile(ProfileEntity likedProfile, ProfileEntity likerProfile){
         likedProfilesEntity = new LikedProfilesEntity();
         likedProfilesEntity.setLikedId(likedProfile);
