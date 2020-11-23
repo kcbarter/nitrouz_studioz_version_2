@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Members</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body class="members_info">
@@ -59,9 +60,18 @@
         <img th:src="${(profile.profilePic != null) ? profile.profilePic : '/images/empty_profile_pic.png'}" class="profile_pic"/>
         <p th:text="${profile.profileName}"></p>
         <div th:if="${profileEntity.getProfileName()} != ${profile.profileName}" class="like_follow">
-            <input th:attr="onclick=|likeProfile('${profile.email}')|" id="like_profile" type="image" src="/images/thumbs_up.png"
-                   class="like_button" name="liked_profile" alt="Like Profile"/>
-            <button th:attr="onclick=|followProfile('${profile.email}')|" class="follow_button">Follow</button>
+            <button th:if="!${#lists.contains(liked_profiles, profile)}" class="like_button" th:attr="onclick=|likeProfile('${profile.email}')|">
+                <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>
+            </button>
+            <button th:if="${#lists.contains(liked_profiles, profile)}" class="unlike_button" th:attr="onclick=|unlike('${profile.email}')|">
+                <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>
+            </button>
+            <button th:if="!${#lists.contains(followed_profiles, profile)}" th:attr="onclick=|followProfile('${profile.email}')|" class="follow_button">
+                Follow
+            </button>
+            <button th:if="${#lists.contains(followed_profiles, profile)}" th:attr="onclick=|unfollow('${profile.email}')|" class="unfollow_button">
+                Unfollow
+            </button>
         </div>
     </div>
 </div>
@@ -82,6 +92,18 @@
             console.log(username);
             console.log(email);
             fetch("/api/follow/" + email)
+                .then(res => console.log("Response, " + res))
+                .catch(err => console.log("Error, " + err))
+        }
+
+        function unlike(email){
+            fetch("/api/unlike/" + email)
+                .then(res => console.log("Response, " + res))
+                .catch(err => console.log("Error, " + err))
+        }
+
+        function unfollow(email){
+            fetch("api/unfollow/" + email)
                 .then(res => console.log("Response, " + res))
                 .catch(err => console.log("Error, " + err))
         }

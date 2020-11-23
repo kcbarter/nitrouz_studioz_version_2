@@ -832,9 +832,17 @@ h1, .members {
 }
 
 .like_button {
-  height: 30px;
-  width: 30px;
-  padding-right: 1em;
+  background-color: white;
+  border-color: darkgrey;
+  margin-right: 0.5em;
+  padding-right: 0.7em;
+}
+
+.unlike_button {
+  background-color: aqua;
+  border-color: darkgrey;
+  margin-right: 0.5em;
+  padding-right: 0.7em;
 }
 
 .follow_button {
@@ -845,6 +853,21 @@ h1, .members {
   padding: 0.7em;
   font-size: 0.9em;
   font-weight: 50;
+}
+
+.unfollow_button {
+  background-color: aqua;
+  border-color: darkgrey;
+  border-width: 2px;
+  color: black;
+  padding: 0.7em;
+  font-size: 0.9em;
+  font-weight: 50;
+}
+
+.follow_button:hover, .like_button:hover, .unlike_button:hover, .unfollow_button:hover {
+  background-color: purple;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

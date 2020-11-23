@@ -36,13 +36,19 @@ public class ApiController {
         memberService.followProfile(followProfile, profileEntity);
     }
 
-    @RequestMapping("/unlike")
-    public void unlikeProfile(){
-
+    @RequestMapping("/unlike/{email:.+}")
+    public void unlikeProfile(@PathVariable String email){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        profileEntity = profileService.findProfileByEmail(auth.getName());
+        ProfileEntity unlikeProfile = profileService.findProfileByEmail(email);
+        memberService.unlikeProfile(profileEntity, unlikeProfile);
     }
 
-    @RequestMapping("/unfollow")
-    public void unfollowProfile(){
-
+    @RequestMapping("/unfollow/{email:.+}")
+    public void unfollowProfile(@PathVariable String email){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        profileEntity = profileService.findProfileByEmail(auth.getName());
+        ProfileEntity unfollowProfile = profileService.findProfileByEmail(email);
+        memberService.unfollowProfile(profileEntity, unfollowProfile);
     }
 }

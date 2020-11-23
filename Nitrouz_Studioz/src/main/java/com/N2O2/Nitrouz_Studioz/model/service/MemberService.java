@@ -29,10 +29,16 @@ public class MemberService {
         return profiles;
     }
 
-    public List <LikedProfilesEntity> getProfilesLikedByUser(ProfileEntity profile){
-        List<LikedProfilesEntity> likedProfiles;
+    public List <ProfileEntity> getProfilesLikedByUser(ProfileEntity profile){
+        List<ProfileEntity> likedProfiles;
         likedProfiles = likedProfileDoa.getByLikerId(profile);
         return likedProfiles;
+    }
+
+    public List <ProfileEntity> getProfilesFollowedByUser(ProfileEntity profile){
+        List<ProfileEntity> followedProfiles;
+        followedProfiles = followedProfileDoa.getByFollowerId(profile);
+        return followedProfiles;
     }
 
     public void likeProfile(ProfileEntity likedProfile, ProfileEntity likerProfile){
@@ -47,5 +53,13 @@ public class MemberService {
         followedProfilesEntity.setFollowedId(followedProfile);
         followedProfilesEntity.setFollowerId(followerProfile);
         followedProfileDoa.save(followedProfilesEntity);
+    }
+
+    public void unlikeProfile(ProfileEntity likerId, ProfileEntity likedId){
+        likedProfileDoa.deleteLikedProfile(likerId, likedId);
+    }
+
+    public void unfollowProfile(ProfileEntity followerId, ProfileEntity followedId){
+        followedProfileDoa.deleteFollowedProfile(followerId, followedId);
     }
 }

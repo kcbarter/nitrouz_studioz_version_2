@@ -1,6 +1,5 @@
 package com.N2O2.Nitrouz_Studioz.controller;
 
-import com.N2O2.Nitrouz_Studioz.model.followed_and_liked_profiles.LikedProfilesEntity;
 import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
 import com.N2O2.Nitrouz_Studioz.model.service.MemberService;
 import com.N2O2.Nitrouz_Studioz.model.service.ProfileService;
@@ -62,13 +61,11 @@ public class UserController {
         profiles = memberService.getAllProfiles();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         profileEntity = profileService.findProfileByEmail(auth.getName());
-        List<LikedProfilesEntity> likedProfiles = memberService.getProfilesLikedByUser(profileEntity);
-        for(LikedProfilesEntity likedProfilesEntity : likedProfiles){
-            System.out.println("Liked Id: " + likedProfilesEntity.getLikedId().getId());
-            System.out.println("Liker Id: " + likedProfilesEntity.getLikerId().getId());
-        }
+        List<ProfileEntity> likedProfiles = memberService.getProfilesLikedByUser(profileEntity);
+        List<ProfileEntity> followedProfiles = memberService.getProfilesFollowedByUser(profileEntity);
         model.addAttribute("profileEntity", profileEntity);
         model.addAttribute("liked_profiles", likedProfiles);
+        model.addAttribute("followed_profiles", followedProfiles);
         model.addAttribute("profiles", profiles);
         model.addAttribute("loggedIn", loggedIn);
         model.addAttribute("loggedOut", loggedOut);
