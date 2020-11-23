@@ -103,7 +103,7 @@
         }
 
         function unfollow(email){
-            fetch("api/unfollow/" + email)
+            fetch("/api/unfollow/" + email)
                 .then(res => console.log("Response, " + res))
                 .catch(err => console.log("Error, " + err))
         }
