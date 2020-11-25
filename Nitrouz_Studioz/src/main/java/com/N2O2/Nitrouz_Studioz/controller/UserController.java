@@ -27,8 +27,7 @@ public class UserController {
 
     @GetMapping("/success")
     public String logInAttmpt(Model model){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        profileEntity = profileService.findProfileByEmail(auth.getName());
+        profileEntity = loggedInUser();
         model.addAttribute("profileEntity", profileEntity);
         model.addAttribute("loggedIn", loggedIn);
         model.addAttribute("loggedOut", loggedOut);
@@ -37,8 +36,7 @@ public class UserController {
 
     @RequestMapping("/index")
     public String loggedInIndex(Model model){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        profileEntity = profileService.findProfileByEmail(auth.getName());
+        profileEntity = loggedInUser();
         model.addAttribute("profileEntity", profileEntity);
         model.addAttribute("loggedIn", loggedIn);
         model.addAttribute("loggedOut", loggedOut);
@@ -47,8 +45,7 @@ public class UserController {
 
     @RequestMapping("/about")
     public String loggedInAbout(Model model){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        profileEntity = profileService.findProfileByEmail(auth.getName());
+        profileEntity = loggedInUser();
         model.addAttribute("profileEntity", profileEntity);
         model.addAttribute("loggedIn", loggedIn);
         model.addAttribute("loggedOut", loggedOut);
@@ -59,8 +56,7 @@ public class UserController {
     public String loggedInMembers(Model model){
         List<ProfileEntity> profiles;
         profiles = memberService.getAllProfiles();
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        profileEntity = profileService.findProfileByEmail(auth.getName());
+        profileEntity = loggedInUser();
         List<ProfileEntity> likedProfiles = memberService.getProfilesLikedByUser(profileEntity);
         List<ProfileEntity> followedProfiles = memberService.getProfilesFollowedByUser(profileEntity);
         model.addAttribute("profileEntity", profileEntity);
@@ -71,6 +67,11 @@ public class UserController {
         model.addAttribute("loggedOut", loggedOut);
 
         return "members";
+    }
+
+    private ProfileEntity loggedInUser(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return profileService.findProfileByEmail(auth.getName());
     }
 }
 

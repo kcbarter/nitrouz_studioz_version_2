@@ -22,33 +22,34 @@ public class ApiController {
 
     @RequestMapping("/like/{email:.+}")
     public void likeProfile(@PathVariable String email){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        profileEntity = profileService.findProfileByEmail(auth.getName());
+        profileEntity = loggedInUser();
         ProfileEntity likedProfile = profileService.findProfileByEmail(email);
         memberService.likeProfile(likedProfile, profileEntity);
     }
 
     @RequestMapping("/follow/{email:.+}")
     public void followProfile(@PathVariable String email){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        profileEntity = profileService.findProfileByEmail(auth.getName());
+        profileEntity = loggedInUser();
         ProfileEntity followProfile = profileService.findProfileByEmail(email);
         memberService.followProfile(followProfile, profileEntity);
     }
 
     @RequestMapping("/unlike/{email:.+}")
     public void unlikeProfile(@PathVariable String email){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        profileEntity = profileService.findProfileByEmail(auth.getName());
+        profileEntity = loggedInUser();
         ProfileEntity unlikeProfile = profileService.findProfileByEmail(email);
         memberService.unlikeProfile(profileEntity, unlikeProfile);
     }
 
     @RequestMapping("/unfollow/{email:.+}")
     public void unfollowProfile(@PathVariable String email){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        profileEntity = profileService.findProfileByEmail(auth.getName());
+        profileEntity = loggedInUser();
         ProfileEntity unfollowProfile = profileService.findProfileByEmail(email);
         memberService.unfollowProfile(profileEntity, unfollowProfile);
+    }
+
+    private ProfileEntity loggedInUser(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return profileService.findProfileByEmail(auth.getName());
     }
 }

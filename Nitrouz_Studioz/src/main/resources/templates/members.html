@@ -60,7 +60,7 @@
         <img th:src="${(profile.profilePic != null) ? profile.profilePic : '/images/empty_profile_pic.png'}" class="profile_pic"/>
         <p th:text="${profile.profileName}"></p>
         <div th:if="${profileEntity.getProfileName()} != ${profile.profileName}" class="like_follow">
-            <button th:if="!${#lists.contains(liked_profiles, profile)}" class="like_button" th:attr="onclick=|likeProfile('${profile.email}')|">
+            <button th:if="!${#lists.contains(liked_profiles, profile)}" class="like_button" th:cl th:attr="onclick=|likeProfile('${profile.email}')|">
                 <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>
             </button>
             <button th:if="${#lists.contains(liked_profiles, profile)}" class="unlike_button" th:attr="onclick=|unlike('${profile.email}')|">
@@ -79,18 +79,12 @@
 <script th:inline="javascript">
     if([[${loggedIn}]]){
         function likeProfile(email){
-            var username = [[${profileEntity.getProfileName()}]];
-            console.log(username);
-            console.log(email);
             fetch("/api/like/" + email)
                 .then(res => console.log("Response, " + res))
                 .catch(err => console.log("Error, " + err))
         }
 
         function followProfile(email){
-            var username = [[${profileEntity.getProfileName()}]];
-            console.log(username);
-            console.log(email);
             fetch("/api/follow/" + email)
                 .then(res => console.log("Response, " + res))
                 .catch(err => console.log("Error, " + err))
