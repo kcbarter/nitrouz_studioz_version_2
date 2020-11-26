@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class FollowedProfilesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "followed_profile_id")
+    @Column(name = "followed_profile_id", unique = true, nullable = false)
     private long id;
     @OneToOne(targetEntity = ProfileEntity.class, fetch = FetchType.EAGER)
     @JoinColumn(name = "followed_id", nullable = false)

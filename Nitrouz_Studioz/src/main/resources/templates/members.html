@@ -60,7 +60,11 @@
         <img th:src="${(profile.profilePic != null) ? profile.profilePic : '/images/empty_profile_pic.png'}" class="profile_pic"/>
         <p th:text="${profile.profileName}"></p>
         <div th:if="${profileEntity.getProfileName()} != ${profile.profileName}" class="like_follow">
-            <button th:if="!${#lists.contains(liked_profiles, profile)}" class="like_button" th:cl th:attr="onclick=|likeProfile('${profile.email}')|">
+<!--            <button class="like_button" th:classappend="${#lists.contains(liked_profiles, profile)} ? like : unlike" th:value="${profile.email}">-->
+<!--                <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>-->
+<!--            </button>-->
+
+            <button th:if="!${#lists.contains(liked_profiles, profile)}" class="like_button" th:attr="onclick=|likeProfile('${profile.email}')|">
                 <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>
             </button>
             <button th:if="${#lists.contains(liked_profiles, profile)}" class="unlike_button" th:attr="onclick=|unlike('${profile.email}')|">
@@ -78,6 +82,27 @@
 
 <script th:inline="javascript">
     if([[${loggedIn}]]){
+    //     $('button.like_button').delegate('click', function (e){
+    //         let email;
+    //         e.preventDefault();
+    //         if($(this).hasClass("like")){
+    //             email = $(this).val();
+    //             fetch("/api/like/" + email)
+    //                 .then(res => console.log("Response, " + res))
+    //                 .catch(err => console.log("Error, " + err))
+    //             $(this).removeClass("like");
+    //             $(this).addClass("unlike")
+    //         }
+    //         if($(this).hasClass("unlike")){
+    //             email = $(this).val();
+    //             fetch("/api/unlike/" + email)
+    //                 .then(res => console.log("Response, " + res))
+    //                 .catch(err => console.log("Error, " + err))
+    //             $(this).removeClass("unlike");
+    //             $(this).addClass("like");
+    //         }
+    //     })
+
         function likeProfile(email){
             fetch("/api/like/" + email)
                 .then(res => console.log("Response, " + res))
