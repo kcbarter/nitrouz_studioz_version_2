@@ -80,33 +80,34 @@
     </div>
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" th:inline="javascript">
-    // $(document).ready(function (){
-    //     $("button.like_button").on('click', function (){
-    //         let email;
-    //         console.log("Got In");
-    //         if($(this).hasClass("like")){
-    //             console.log("Got In if Statement for like");
-    //             email = $(this).val();
-    //             fetch("/api/like/" + email)
-    //                 .then(res => console.log("Response, " + res))
-    //                 .catch(err => console.log("Error, " + err))
-    //             $(this).removeClass("like");
-    //             $(this).addClass("unlike")
-    //         }
-    //         if($(this).hasClass("unlike")){
-    //             console.log("Got In if Statement for unlike");
-    //             email = $(this).val();
-    //             fetch("/api/unlike/" + email)
-    //                 .then(res => console.log("Response, " + res))
-    //                 .catch(err => console.log("Error, " + err))
-    //             $(this).removeClass("unlike");
-    //             $(this).addClass("like");
-    //         }
-    //     });
-    // });
-
+<script th:inline="javascript">
     if([[${loggedIn}]]){
+        // src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+        // $(document).ready(function (){
+        //     $("button.like_button").on('click', function (){
+        //         let email;
+        //         console.log("Got In");
+        //         if($(this).hasClass("like")){
+        //             console.log("Got In if Statement for like");
+        //             email = $(this).val();
+        //             fetch("/api/like/" + email)
+        //                 .then(res => console.log("Response, " + res))
+        //                 .catch(err => console.log("Error, " + err))
+        //             $(this).removeClass("like");
+        //             $(this).addClass("unlike")
+        //         }
+        //         if($(this).hasClass("unlike")){
+        //             console.log("Got In if Statement for unlike");
+        //             email = $(this).val();
+        //             fetch("/api/unlike/" + email)
+        //                 .then(res => console.log("Response, " + res))
+        //                 .catch(err => console.log("Error, " + err))
+        //             $(this).removeClass("unlike");
+        //             $(this).addClass("like");
+        //         }
+        //     });
+        // });
+
         function likeProfile(email){
             fetch("/api/like/" + email)
                 .then(res => console.log("Response, " + res))
