@@ -831,21 +831,21 @@ h1, .members {
   display: flex;
 }
 
-.like_button {
+.like {
   background-color: white;
   border-color: darkgrey;
   margin-right: 0.5em;
   padding-right: 0.7em;
 }
 
-.unlike_button {
+.unlike {
   background-color: aqua;
   border-color: darkgrey;
   margin-right: 0.5em;
   padding-right: 0.7em;
 }
 
-.follow_button {
+.follow {
   background-color: white;
   border-color: darkgrey;
   border-width: 2px;
@@ -855,7 +855,7 @@ h1, .members {
   font-weight: 50;
 }
 
-.unfollow_button {
+.unfollow {
   background-color: aqua;
   border-color: darkgrey;
   border-width: 2px;
@@ -865,7 +865,7 @@ h1, .members {
   font-weight: 50;
 }
 
-.follow_button:hover, .like_button:hover, .unlike_button:hover, .unfollow_button:hover {
+.follow:hover, .like:hover, .unlike:hover, .unfollow:hover {
   background-color: purple;
   cursor: pointer;
 }

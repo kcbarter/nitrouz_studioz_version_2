@@ -60,81 +60,55 @@
         <img th:src="${(profile.profilePic != null) ? profile.profilePic : '/images/empty_profile_pic.png'}" class="profile_pic"/>
         <p th:text="${profile.profileName}"></p>
         <div th:if="${profileEntity.getProfileName()} != ${profile.profileName}" class="like_follow">
-<!--            <button class="like_button" th:classappend="${#lists.contains(liked_profiles, profile)} ? unlike : like" th:value="${profile.email}">-->
-<!--                <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>-->
-<!--            </button>-->
+            <button th:id="'like_unlike' + ${profile.id}" class="like_button" th:classappend="${#lists.contains(liked_profiles, profile)} ? unlike : like" th:attr="onclick=|likeOrUnlikeProfile('${profile.email}', this.id)|">
+                <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>
+            </button>
 
-            <button th:if="!${#lists.contains(liked_profiles, profile)}" class="like_button" th:attr="onclick=|likeProfile('${profile.email}')|">
-                <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>
-            </button>
-            <button th:if="${#lists.contains(liked_profiles, profile)}" class="unlike_button" th:attr="onclick=|unlike('${profile.email}')|">
-                <i class="fa fa-thumbs-o-up" style="font-size:24px"></i>
-            </button>
-            <button th:if="!${#lists.contains(followed_profiles, profile)}" th:attr="onclick=|followProfile('${profile.email}')|" class="follow_button">
-                Follow
-            </button>
-            <button th:if="${#lists.contains(followed_profiles, profile)}" th:attr="onclick=|unfollow('${profile.email}')|" class="unfollow_button">
-                Unfollow
+            <button th:id="'follow_unfollow' + ${profile.id}" class="follow_button" th:classappend="${#lists.contains(followed_profiles, profile)} ? unfollow : follow"
+                th:text="${#lists.contains(followed_profiles, profile)} ? Unfollow : Follow" th:attr="onclick=|followOrUnfollowProfile('${profile.email}', this.id)|">
             </button>
         </div>
     </div>
 </div>
 
 <script th:inline="javascript">
-    // $(document).ready(function (){
-    //     $("button").delegate("click", ".like_button", function () {
-    //         console.log("Got In!");
-    //     });
-    // });
     if([[${loggedIn}]]){
-        // src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-        // $(document).ready(function (){
-        //     $("button.like_button").on('click', function (){
-        //         let email;
-        //         console.log("Got In");
-        //         if($(this).hasClass("like")){
-        //             console.log("Got In if Statement for like");
-        //             email = $(this).val();
-        //             fetch("/api/like/" + email)
-        //                 .then(res => console.log("Response, " + res))
-        //                 .catch(err => console.log("Error, " + err))
-        //             $(this).removeClass("like");
-        //             $(this).addClass("unlike")
-        //         }
-        //         if($(this).hasClass("unlike")){
-        //             console.log("Got In if Statement for unlike");
-        //             email = $(this).val();
-        //             fetch("/api/unlike/" + email)
-        //                 .then(res => console.log("Response, " + res))
-        //                 .catch(err => console.log("Error, " + err))
-        //             $(this).removeClass("unlike");
-        //             $(this).addClass("like");
-        //         }
-        //     });
-        // });
+        function likeOrUnlikeProfile(email, id){
+            if(document.getElementById(id).classList.contains("like")){
+                fetch("/api/like/" + email)
+                    .then(res => console.log("Response, " + res))
+                    .catch(err => console.log("Error, " + err))
+                document.getElementById(id).classList.remove("like");
+                document.getElementById(id).classList.add("unlike");
+            }
 
-        function likeProfile(email){
-            fetch("/api/like/" + email)
-                .then(res => console.log("Response, " + res))
-                .catch(err => console.log("Error, " + err))
+            if(document.getElementById(id).classList.contains("unlike")){
+                fetch("/api/unlike/" + email)
+                    .then(res => console.log("Response, " + res))
+                    .catch(err => console.log("Error, " + err))
+                document.getElementById(id).classList.remove("unlike");
+                document.getElementById(id).classList.add("like");
+            }
         }
 
-        function followProfile(email){
-            fetch("/api/follow/" + email)
-                .then(res => console.log("Response, " + res))
-                .catch(err => console.log("Error, " + err))
-        }
+        function followOrUnfollowProfile(email, id){
+            if(document.getElementById(id).classList.contains("follow")){
+                fetch("/api/follow/" + email)
+                    .then(res => console.log("Response, " + res))
+                    .catch(err => console.log("Error, " + err))
+                document.getElementById(id).classList.remove("follow");
+                document.getElementById(id).classList.add("unfollow");
+                document.getElementById(id).innerHTML = "Unfollow";
+            }
 
-        function unlike(email){
-            fetch("/api/unlike/" + email)
-                .then(res => console.log("Response, " + res))
-                .catch(err => console.log("Error, " + err))
-        }
-
-        function unfollow(email){
-            fetch("/api/unfollow/" + email)
-                .then(res => console.log("Response, " + res))
-                .catch(err => console.log("Error, " + err))
+            if(document.getElementById(id).classList.contains("unfollow")){
+                fetch("/api/unfollow/" + email)
+                    .then(res => console.log("Response, " + res))
+                    .catch(err => console.log("Error, " + err))
+                document.getElementById(id).classList.remove("unfollow");
+                document.getElementById(id).classList.add("follow");
+                document.getElementById(id).innerHTML = "Follow";
+            }
         }
     }
 </script>
