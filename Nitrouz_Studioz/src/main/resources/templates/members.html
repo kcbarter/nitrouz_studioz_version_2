@@ -76,38 +76,54 @@
         function likeOrUnlikeProfile(email, id){
             if(document.getElementById(id).classList.contains("like")){
                 fetch("/api/like/" + email)
-                    .then(res => console.log("Response, " + res))
+                    .then(res => {
+                        if(res.ok){
+                            console.log("Response, " + res);
+                            document.getElementById(id).classList.remove("like");
+                            document.getElementById(id).classList.add("unlike");
+                        }
+                    })
                     .catch(err => console.log("Error, " + err))
-                document.getElementById(id).classList.remove("like");
-                document.getElementById(id).classList.add("unlike");
             }
 
             if(document.getElementById(id).classList.contains("unlike")){
                 fetch("/api/unlike/" + email)
-                    .then(res => console.log("Response, " + res))
+                    .then(res => {
+                        if(res.ok){
+                            console.log(res);
+                            document.getElementById(id).classList.remove("unlike");
+                            document.getElementById(id).classList.add("like");
+                        }
+                    })
                     .catch(err => console.log("Error, " + err))
-                document.getElementById(id).classList.remove("unlike");
-                document.getElementById(id).classList.add("like");
             }
         }
 
         function followOrUnfollowProfile(email, id){
             if(document.getElementById(id).classList.contains("follow")){
                 fetch("/api/follow/" + email)
-                    .then(res => console.log("Response, " + res))
+                    .then(res => {
+                        if(res.ok){
+                            console.log("Response, " + res);
+                            document.getElementById(id).classList.remove("follow");
+                            document.getElementById(id).classList.add("unfollow");
+                            document.getElementById(id).innerHTML = "Unfollow";
+                        }
+                    })
                     .catch(err => console.log("Error, " + err))
-                document.getElementById(id).classList.remove("follow");
-                document.getElementById(id).classList.add("unfollow");
-                document.getElementById(id).innerHTML = "Unfollow";
             }
 
             if(document.getElementById(id).classList.contains("unfollow")){
                 fetch("/api/unfollow/" + email)
-                    .then(res => console.log("Response, " + res))
+                    .then(res => {
+                        if(res.ok){
+                            console.log("Response, " + res);
+                            document.getElementById(id).classList.remove("unfollow");
+                            document.getElementById(id).classList.add("follow");
+                            document.getElementById(id).innerHTML = "Follow";
+                        }
+                    })
                     .catch(err => console.log("Error, " + err))
-                document.getElementById(id).classList.remove("unfollow");
-                document.getElementById(id).classList.add("follow");
-                document.getElementById(id).innerHTML = "Follow";
             }
         }
     }
