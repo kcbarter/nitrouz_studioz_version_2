@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body id="profile_page">
+    <a id="exit" th:href="'/LoggedInUser/members'">X</a>
+    <div id="profile_info">
+        <h1 th:text="${profileEntity.profileName}"></h1>
+    </div>
+</body>
+</html>

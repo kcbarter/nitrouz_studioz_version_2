@@ -1,0 +1,11 @@
+@import "../abstracts/colors";
+@import "sign_up";
+
+#profile_page{
+  color: $white;
+  background-color: $black;
+}
+
+#exit{
+  @extend #exit;
+}

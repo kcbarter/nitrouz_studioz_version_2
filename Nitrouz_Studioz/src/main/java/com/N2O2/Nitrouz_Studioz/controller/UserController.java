@@ -69,6 +69,14 @@ public class UserController {
         return "members";
     }
 
+    @RequestMapping("/profile")
+    public String loggedInProfilePage(Model model){
+        profileEntity = loggedInUser();
+        model.addAttribute("profileEntity", profileEntity);
+
+        return "profile";
+    }
+
     private ProfileEntity loggedInUser(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         return profileService.findProfileByEmail(auth.getName());
