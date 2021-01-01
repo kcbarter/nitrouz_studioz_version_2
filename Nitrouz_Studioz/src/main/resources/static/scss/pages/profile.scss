@@ -1,4 +1,5 @@
 @import "../abstracts/colors";
+@import "members";
 @import "sign_up";
 
 #profile_page{
@@ -8,4 +9,22 @@
 
 #exit{
   @extend #exit;
+}
+
+#profile_form{
+  display: flex;
+  flex-direction: column;
+}
+
+label, input{
+  display: inline-block !important;
+}
+
+#profile_header{
+  text-align: center;
+}
+
+#profile_pic{
+  @extend .profile_pic;
+  clear: both;
 }

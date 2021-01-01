@@ -8,7 +8,22 @@
 <body id="profile_page">
     <a id="exit" th:href="'/LoggedInUser/members'">X</a>
     <div id="profile_info">
-        <h1 th:text="${profileEntity.profileName}"></h1>
+        <h1 id="profile_header">Profile Info</h1>
+        <form id="profile_form">
+            <img id="profile_pic" th:src="${(profileEntity.profilePic != null) ? profileEntity.profilePic : '/images/empty_profile_pic.png'}" class="profile_pic" alt="Profile Pic">
+            <label for="profileName">Profile Name:</label>
+            <input id="profileName"  th:value="${profileEntity.profileName}"/>
+            <label for="name">Name:</label>
+            <input id="name" th:value="${(profileEntity.name != null) ? profileEntity.name : 'Enter a Name'}"/>
+            <label for="email">Email:</label>
+            <input id="email" th:value="${(profileEntity.email != null) ? profileEntity.email : 'Enter a Email'}" type="email">
+            <label for="about">About:</label>
+            <textarea id="about" th:value="${(profileEntity.about != null) ? profileEntity.about : 'Enter about info'}"></textarea>
+            <label for="phone">Phone Number</label>
+            <input id="phone" th:value="${(profileEntity.phone != null) ? profileEntity.phone : 'Enter Phone Number'}">
+            <label for="password">Password:</label>
+            <input id="password" th:value="${profileEntity.password}" type="password">
+        </form>
     </div>
 </body>
 </html>

@@ -46,20 +46,6 @@ header{
   display: flex;
 }
 
-//.like_button{
-//  background-color: $white;
-//  border-color: darkgrey;
-//  margin-right: .5em;
-//  padding-right: .7em;
-//}
-//
-//.unlike_button{
-//  background-color: $aqua;
-//  border-color: darkgrey;
-//  margin-right: .5em;
-//  padding-right: .7em;
-//}
-
 .like{
   background-color: $white;
   border-color: darkgrey;
@@ -93,26 +79,6 @@ header{
   font-size: .9em;
   font-weight: 50;
 }
-
-//.follow_button{
-//  background-color: $white;
-//  border-color: darkgrey;
-//  border-width: 2px;
-//  color: black;
-//  padding: .7em;
-//  font-size: .9em;
-//  font-weight: 50;
-//}
-//
-//.unfollow_button{
-//  background-color: $aqua;
-//  border-color: darkgrey;
-//  border-width: 2px;
-//  color: black;
-//  padding: .7em;
-//  font-size: .9em;
-//  font-weight: 50;
-//}
 
 .follow:hover, .like:hover, .unlike:hover, .unfollow:hover{
   background-color: $purple;
