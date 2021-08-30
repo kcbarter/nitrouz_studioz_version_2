@@ -10,5 +10,7 @@ public interface ProfileDoa extends JpaRepository<ProfileEntity, Long> {
 
     public ProfileEntity findByEmail(String email);
 
+    public ProfileEntity getById(Long id);
+
     public List<ProfileEntity> findAll();
 }

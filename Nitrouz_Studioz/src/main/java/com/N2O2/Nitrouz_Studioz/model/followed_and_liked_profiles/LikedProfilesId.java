@@ -1,20 +1,12 @@
 package com.N2O2.Nitrouz_Studioz.model.followed_and_liked_profiles;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "liked_profiles")
-@IdClass(LikedProfilesId.class)
-public class LikedProfilesEntity {
-    @Column(name = "liked_id")
-    @Id
+public class LikedProfilesId implements Serializable {
     private long liked_Id;
-
-    @Column(name = "liker_Id")
-    @Id
     private long liker_Id;
 
-    public LikedProfilesEntity(){
+    public LikedProfilesId(){
 
     }
 

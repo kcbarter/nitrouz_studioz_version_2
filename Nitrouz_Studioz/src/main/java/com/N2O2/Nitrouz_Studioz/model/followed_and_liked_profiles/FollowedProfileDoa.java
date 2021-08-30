@@ -12,10 +12,10 @@ import java.util.List;
 @Transactional
 public interface FollowedProfileDoa extends JpaRepository<FollowedProfilesEntity, Long> {
 
-    @Query("SELECT id.followedId FROM FollowedProfilesEntity id WHERE id.followerId = ?1")
-    public List<ProfileEntity> getByFollowerId(ProfileEntity profileEntity);
+    @Query("SELECT id.followed_Id FROM FollowedProfilesEntity id WHERE id.follower_Id = ?1")
+    public List<Long> getByFollowerId(Long profileEntity);
 
     @Modifying
-    @Query("DELETE FROM FollowedProfilesEntity WHERE followerId = :followerId AND followedId = :followedId")
-    public void deleteFollowedProfile(@Param("followerId") ProfileEntity followerId, @Param("followedId") ProfileEntity followedId);
+    @Query("DELETE FROM FollowedProfilesEntity WHERE follower_Id = :follower_Id AND followed_Id = :followed_Id")
+    public void deleteFollowedProfile(@Param("follower_Id") Long follower_Id, @Param("followed_Id") Long followed_Id);
 }

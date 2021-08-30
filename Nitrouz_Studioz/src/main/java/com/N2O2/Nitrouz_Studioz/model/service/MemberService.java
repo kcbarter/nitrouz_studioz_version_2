@@ -9,6 +9,7 @@ import com.N2O2.Nitrouz_Studioz.model.profile.ProfileEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,36 +31,42 @@ public class MemberService {
     }
 
     public List <ProfileEntity> getProfilesLikedByUser(ProfileEntity profile){
-        List<ProfileEntity> likedProfiles;
-        likedProfiles = likedProfileDoa.getByLikerId(profile);
+        List<Long> likedIds = likedProfileDoa.getByLikerId(profile.getId());
+        List<ProfileEntity> likedProfiles = new ArrayList<>();
+        for(Long ids : likedIds){
+            likedProfiles.add(profileDoa.getById(ids));
+        }
         return likedProfiles;
     }
 
     public List <ProfileEntity> getProfilesFollowedByUser(ProfileEntity profile){
-        List<ProfileEntity> followedProfiles;
-        followedProfiles = followedProfileDoa.getByFollowerId(profile);
+        List<Long> followedIds = followedProfileDoa.getByFollowerId(profile.getId());
+        List<ProfileEntity> followedProfiles = new ArrayList<>();
+        for(Long ids : followedIds){
+            followedProfiles.add(profileDoa.getById(ids));
+        }
         return followedProfiles;
     }
 
     public void likeProfile(ProfileEntity likedProfile, ProfileEntity likerProfile){
         likedProfilesEntity = new LikedProfilesEntity();
-        likedProfilesEntity.setLikedId(likedProfile);
-        likedProfilesEntity.setLikerId(likerProfile);
+        likedProfilesEntity.setLiked_Id(likedProfile.getId());
+        likedProfilesEntity.setLiker_Id(likerProfile.getId());
         likedProfileDoa.save(likedProfilesEntity);
     }
 
     public void followProfile(ProfileEntity followedProfile, ProfileEntity followerProfile){
         followedProfilesEntity = new FollowedProfilesEntity();
-        followedProfilesEntity.setFollowedId(followedProfile);
-        followedProfilesEntity.setFollowerId(followerProfile);
+        followedProfilesEntity.setFollowed_Id(followedProfile.getId());
+        followedProfilesEntity.setFollower_Id(followerProfile.getId());
         followedProfileDoa.save(followedProfilesEntity);
     }
 
     public void unlikeProfile(ProfileEntity likerId, ProfileEntity likedId){
-        likedProfileDoa.deleteLikedProfile(likerId, likedId);
+        likedProfileDoa.deleteLikedProfile(likerId.getId(), likedId.getId());
     }
 
     public void unfollowProfile(ProfileEntity followerId, ProfileEntity followedId){
-        followedProfileDoa.deleteFollowedProfile(followerId, followedId);
+        followedProfileDoa.deleteFollowedProfile(followerId.getId(), followedId.getId());
     }
 }
